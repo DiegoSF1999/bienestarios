@@ -10,23 +10,35 @@ import UIKit
 
 class MenuViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
-    let arr:[String] = ["uno", "dos", "tres", "cuatro"]
+    let names:[String] = ["My Apps", "Restrictions", "Stadistics", "My Profile"]
+    let identifiers:[String] = ["MainView", "RestrictionView", "StadisticsView", "ProfileView"]
     
+    @IBOutlet weak var table_view: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
     }
+    
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return 0.01
+    }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return arr.count
+        return names.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MenuCell", for: indexPath) as! MenuTableViewCell
         
-         cell.label_menu.text = arr[indexPath.row]
+         cell.label_menu.text = names[indexPath.row]
 
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+   
+        performSegue(withIdentifier: identifiers[indexPath.row], sender: self)
+    
     }
     
 

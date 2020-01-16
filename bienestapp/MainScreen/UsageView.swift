@@ -1,15 +1,18 @@
 //
-//  MainViewController.swift
+//  UsageView.swift
 //  bienestapp
 //
-//  Created by alumnos on 15/01/2020.
+//  Created by alumnos on 16/01/2020.
 //  Copyright © 2020 alumnos. All rights reserved.
 //
 
 import UIKit
 
-class MainViewController: UIViewController, UITableViewDelegate, UITableViewDataSource  {
+class UsageView: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
+    @IBOutlet weak var total_usage: UILabel!
+    @IBOutlet weak var app_name: UILabel!
+    @IBOutlet weak var app_image: UIImageView!
     let arr:[String] = ["uno", "dos", "tres", "cuatro"]
 
     override func viewDidLoad() {
@@ -17,6 +20,7 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
 
         // Do any additional setup after loading the view.
     }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return arr.count
     }
@@ -26,23 +30,12 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "MainCell", for: indexPath) as! MainTableViewCell
-        cell.app_image.image = #imageLiteral(resourceName: "icon_example")
-        cell.app_name.text = arr[indexPath.row]
-        cell.app_daily_used.text = String(indexPath.row)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "UsageCell", for: indexPath) as! UsageTableViewCell
+        
+        cell.date_label.text = arr[indexPath.row]
+        cell.daily_used_label.text = String(indexPath.row)
         return cell
     }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-        performSegue(withIdentifier: "MainToUsage", sender: self)
-        
-    }
-    
-    /*private func tableView(tableView: UITableView!, didSelectRowAtIndexPath indexPath: NSIndexPath!) {
-        NSLog("You selected cell number: \(indexPath.row)!")
-        self.performSegue(withIdentifier: "app_detail_screen", sender: self)
-    }*/
     
 
     /*
