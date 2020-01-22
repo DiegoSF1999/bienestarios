@@ -11,11 +11,14 @@ import UIKit
 class MainViewController: UIViewController, UITableViewDelegate, UITableViewDataSource  {
     
     let arr:[String] = ["uno", "dos", "tres", "cuatro"]
+    
+    var token_string:String = ""
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+           
 
-        // Do any additional setup after loading the view.
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return arr.count
@@ -35,7 +38,9 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        performSegue(withIdentifier: "MainToUsage", sender: self)
+        print("Token es:::   " + self.token_string)
+        
+       // performSegue(withIdentifier: "MainToUsage", sender: self)
         
     }
     

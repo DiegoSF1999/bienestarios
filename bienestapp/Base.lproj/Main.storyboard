@@ -247,21 +247,30 @@
                                     <action selector="press_login_button:" destination="BYZ-38-t0r" eventType="touchUpInside" id="DHM-Js-Gwi"/>
                                 </connections>
                             </button>
+                            <textField opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2m2-eT-nQm">
+                                <rect key="frame" x="169" y="630" width="97" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="a0S-fw-Uax" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="1FD-oe-MQj"/>
                             <constraint firstItem="QRB-op-CXn" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="1i7-kv-0p6"/>
                             <constraint firstItem="EvS-wN-jbu" firstAttribute="top" secondItem="8uQ-2u-Wk5" secondAttribute="bottom" constant="16" id="2d6-5r-z1v"/>
+                            <constraint firstItem="2m2-eT-nQm" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="169" id="44Z-wc-1pt"/>
                             <constraint firstItem="TpB-Wz-wrc" firstAttribute="top" secondItem="DEy-G5-HkH" secondAttribute="bottom" constant="8" symbolic="YES" id="8BQ-rl-ONr"/>
                             <constraint firstItem="DEy-G5-HkH" firstAttribute="top" secondItem="grc-tx-zq0" secondAttribute="bottom" constant="84" id="AbH-3S-hlV"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="8uQ-2u-Wk5" secondAttribute="trailing" constant="225" id="C0f-4Y-Vci"/>
                             <constraint firstItem="EvS-wN-jbu" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="91" id="E7u-R2-hv0"/>
+                            <constraint firstItem="2m2-eT-nQm" firstAttribute="top" secondItem="EvS-wN-jbu" secondAttribute="bottom" constant="42" id="EHy-0F-vSe"/>
                             <constraint firstItem="DEy-G5-HkH" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="71" id="EdS-Uc-wAV"/>
                             <constraint firstItem="DEy-G5-HkH" firstAttribute="trailing" secondItem="TpB-Wz-wrc" secondAttribute="trailing" id="GeZ-lq-Pn6"/>
                             <constraint firstItem="vJw-t0-b8D" firstAttribute="top" secondItem="TpB-Wz-wrc" secondAttribute="bottom" constant="33" id="H6B-jM-WQc"/>
                             <constraint firstItem="grc-tx-zq0" firstAttribute="top" secondItem="a0S-fw-Uax" secondAttribute="bottom" constant="25" id="IAt-XE-FP4"/>
                             <constraint firstItem="QRB-op-CXn" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="N6d-LT-Keo"/>
+                            <constraint firstItem="2m2-eT-nQm" firstAttribute="centerX" secondItem="EvS-wN-jbu" secondAttribute="centerX" id="Olm-Dx-J9X"/>
                             <constraint firstItem="DEy-G5-HkH" firstAttribute="centerX" secondItem="grc-tx-zq0" secondAttribute="centerX" id="Rjr-bA-VJp"/>
                             <constraint firstItem="TpB-Wz-wrc" firstAttribute="leading" secondItem="vJw-t0-b8D" secondAttribute="leading" id="SNk-PO-Z8p"/>
                             <constraint firstItem="vJw-t0-b8D" firstAttribute="leading" secondItem="umE-XR-Mvu" secondAttribute="leading" id="ScU-A6-Y42"/>
@@ -548,7 +557,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="CiH-8u-YGR">
-                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <color key="sectionIndexBackgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <prototypes>
@@ -1482,7 +1491,7 @@
         <segue reference="6U7-4Y-1WT"/>
         <segue reference="b5e-ER-MJt"/>
         <segue reference="6ms-4b-FV0"/>
-        <segue reference="PMZ-64-pWV"/>
-        <segue reference="cgq-Qs-GRV"/>
+        <segue reference="qMM-Ci-Y6N"/>
+        <segue reference="ame-sl-64k"/>
     </inferredMetricsTieBreakers>
 </document>
