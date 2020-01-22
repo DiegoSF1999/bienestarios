@@ -8,20 +8,24 @@
 
 import UIKit
 
-class StadisticsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class StadisticsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UIPickerViewDataSource, UIPickerViewDelegate, UITextFieldDelegate {
+  
     
     
     @IBOutlet weak var app_image: UIImageView!
     @IBOutlet weak var percentage_use: UILabel!
     
+    @IBOutlet weak var picker: UIPickerView!
     @IBOutlet weak var app_name: UILabel!
     let arr:[String] = ["uno", "dos", "tres", "cuatro"]
+    
+     let pickerdata:[String] = ["daily", "weekly", "monthly"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
     }
+    
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return arr.count
@@ -41,6 +45,21 @@ class StadisticsViewController: UIViewController, UITableViewDelegate, UITableVi
         return cell
     }
     
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return pickerdata.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return pickerdata[row]
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        print(pickerdata[row])
+    }
 
     /*
     // MARK: - Navigation

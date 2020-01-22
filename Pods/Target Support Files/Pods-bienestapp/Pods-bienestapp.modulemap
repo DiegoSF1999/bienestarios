@@ -1,0 +1,6 @@
+framework module Pods_bienestapp {
+  umbrella header "Pods-bienestapp-umbrella.h"
+
+  export *
+  module * { export * }
+}

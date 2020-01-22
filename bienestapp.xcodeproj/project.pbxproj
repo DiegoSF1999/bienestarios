@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -14,6 +14,11 @@
 		7F39A40823D086FE00BF6AB7 /* RestrictionDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F39A40723D086FE00BF6AB7 /* RestrictionDetailViewController.swift */; };
 		7F39A40B23D0973800BF6AB7 /* StadisticsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F39A40A23D0973800BF6AB7 /* StadisticsViewController.swift */; };
 		7F39A40D23D097A600BF6AB7 /* StadisticsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F39A40C23D097A600BF6AB7 /* StadisticsTableViewCell.swift */; };
+		7F65D17523D5A8E2008E1E97 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F65D17423D5A8E2008E1E97 /* ProfileViewController.swift */; };
+		7F70507A23D6F6AE00C6B556 /* usertoken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F70507923D6F6AE00C6B556 /* usertoken.swift */; };
+		7F70507D23D70D8C00C6B556 /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F70507C23D70D8C00C6B556 /* Token.swift */; };
+		7F70507F23D70DDB00C6B556 /* Requests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F70507E23D70DDB00C6B556 /* Requests.swift */; };
+		7F70508123D71A6700C6B556 /* Tonteria.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F70508023D71A6700C6B556 /* Tonteria.swift */; };
 		7FA7F72F23CC87090013A022 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FA7F72E23CC87090013A022 /* AppDelegate.swift */; };
 		7FA7F73123CC87090013A022 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FA7F73023CC87090013A022 /* ViewController.swift */; };
 		7FA7F73423CC87090013A022 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7FA7F73223CC87090013A022 /* Main.storyboard */; };
@@ -23,9 +28,13 @@
 		7FB5C35E23CF3EAF004C24E1 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FB5C35D23CF3EAF004C24E1 /* MainViewController.swift */; };
 		7FB5C36023CF49E6004C24E1 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FB5C35F23CF49E6004C24E1 /* MenuViewController.swift */; };
 		7FB5C36223CF4A3D004C24E1 /* MenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FB5C36123CF4A3D004C24E1 /* MenuTableViewCell.swift */; };
+		A18327213AD5E79331401E89 /* Pods_bienestapp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3071F49200CC5E0082CD2097 /* Pods_bienestapp.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		21CDFBED92264FD3BF62AEBB /* Pods-bienestapp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-bienestapp.debug.xcconfig"; path = "Target Support Files/Pods-bienestapp/Pods-bienestapp.debug.xcconfig"; sourceTree = "<group>"; };
+		2F262BB95C0A0D7D8ADDEF49 /* Pods-bienestapp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-bienestapp.release.xcconfig"; path = "Target Support Files/Pods-bienestapp/Pods-bienestapp.release.xcconfig"; sourceTree = "<group>"; };
+		3071F49200CC5E0082CD2097 /* Pods_bienestapp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_bienestapp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F39A3FE23D06EA900BF6AB7 /* UsageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsageView.swift; sourceTree = "<group>"; };
 		7F39A40023D0706C00BF6AB7 /* UsageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsageTableViewCell.swift; sourceTree = "<group>"; };
 		7F39A40323D07D0400BF6AB7 /* RestrictionListAppsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestrictionListAppsViewController.swift; sourceTree = "<group>"; };
@@ -33,6 +42,11 @@
 		7F39A40723D086FE00BF6AB7 /* RestrictionDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestrictionDetailViewController.swift; sourceTree = "<group>"; };
 		7F39A40A23D0973800BF6AB7 /* StadisticsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StadisticsViewController.swift; sourceTree = "<group>"; };
 		7F39A40C23D097A600BF6AB7 /* StadisticsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StadisticsTableViewCell.swift; sourceTree = "<group>"; };
+		7F65D17423D5A8E2008E1E97 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		7F70507923D6F6AE00C6B556 /* usertoken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = usertoken.swift; sourceTree = "<group>"; };
+		7F70507C23D70D8C00C6B556 /* Token.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Token.swift; sourceTree = "<group>"; };
+		7F70507E23D70DDB00C6B556 /* Requests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Requests.swift; sourceTree = "<group>"; };
+		7F70508023D71A6700C6B556 /* Tonteria.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tonteria.swift; sourceTree = "<group>"; };
 		7FA7F72B23CC87090013A022 /* bienestapp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = bienestapp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7FA7F72E23CC87090013A022 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7FA7F73023CC87090013A022 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -51,6 +65,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A18327213AD5E79331401E89 /* Pods_bienestapp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -76,12 +91,31 @@
 			path = Stadistics;
 			sourceTree = "<group>";
 		};
+		7F65D17323D5A8BA008E1E97 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				7F65D17423D5A8E2008E1E97 /* ProfileViewController.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		7F70507B23D70D4F00C6B556 /* objects */ = {
+			isa = PBXGroup;
+			children = (
+				7F70507C23D70D8C00C6B556 /* Token.swift */,
+				7F70508023D71A6700C6B556 /* Tonteria.swift */,
+			);
+			path = objects;
+			sourceTree = "<group>";
+		};
 		7FA7F72223CC87090013A022 = {
 			isa = PBXGroup;
 			children = (
 				7FA7F72D23CC87090013A022 /* bienestapp */,
 				7FA7F73523CC870C0013A022 /* Assets.xcassets */,
 				7FA7F72C23CC87090013A022 /* Products */,
+				EAC17DD1E7BFCFE3E28B4E58 /* Pods */,
+				85682DE5F60488251F73D019 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -96,6 +130,9 @@
 		7FA7F72D23CC87090013A022 /* bienestapp */ = {
 			isa = PBXGroup;
 			children = (
+				7F70507E23D70DDB00C6B556 /* Requests.swift */,
+				7F70507B23D70D4F00C6B556 /* objects */,
+				7F65D17323D5A8BA008E1E97 /* Profile */,
 				7F39A40923D0970700BF6AB7 /* Stadistics */,
 				7F39A40223D07C8C00BF6AB7 /* Restriction */,
 				7FA7F72E23CC87090013A022 /* AppDelegate.swift */,
@@ -106,6 +143,7 @@
 				7FA7F73723CC870C0013A022 /* LaunchScreen.storyboard */,
 				7FA7F73A23CC870C0013A022 /* Info.plist */,
 				7FB5C36323CF4A42004C24E1 /* Menu */,
+				7F70507923D6F6AE00C6B556 /* usertoken.swift */,
 			);
 			path = bienestapp;
 			sourceTree = "<group>";
@@ -145,6 +183,23 @@
 			path = Menu;
 			sourceTree = "<group>";
 		};
+		85682DE5F60488251F73D019 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3071F49200CC5E0082CD2097 /* Pods_bienestapp.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		EAC17DD1E7BFCFE3E28B4E58 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				21CDFBED92264FD3BF62AEBB /* Pods-bienestapp.debug.xcconfig */,
+				2F262BB95C0A0D7D8ADDEF49 /* Pods-bienestapp.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -152,9 +207,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7FA7F73D23CC870C0013A022 /* Build configuration list for PBXNativeTarget "bienestapp" */;
 			buildPhases = (
+				D551E1DB247FF1EE3A46BEFC /* [CP] Check Pods Manifest.lock */,
 				7FA7F72723CC87090013A022 /* Sources */,
 				7FA7F72823CC87090013A022 /* Frameworks */,
 				7FA7F72923CC87090013A022 /* Resources */,
+				B6A2E7B5EA0A160A86317608 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -211,6 +268,48 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		B6A2E7B5EA0A160A86317608 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-bienestapp/Pods-bienestapp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-bienestapp/Pods-bienestapp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-bienestapp/Pods-bienestapp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D551E1DB247FF1EE3A46BEFC /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-bienestapp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		7FA7F72723CC87090013A022 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -220,15 +319,20 @@
 				7FA7F73123CC87090013A022 /* ViewController.swift in Sources */,
 				7FB5C36023CF49E6004C24E1 /* MenuViewController.swift in Sources */,
 				7F39A40623D07D6700BF6AB7 /* RestrictionCellTableViewCell.swift in Sources */,
+				7F65D17523D5A8E2008E1E97 /* ProfileViewController.swift in Sources */,
 				7F39A40B23D0973800BF6AB7 /* StadisticsViewController.swift in Sources */,
 				7FB5C36223CF4A3D004C24E1 /* MenuTableViewCell.swift in Sources */,
+				7F70507D23D70D8C00C6B556 /* Token.swift in Sources */,
 				7F39A40123D0706C00BF6AB7 /* UsageTableViewCell.swift in Sources */,
+				7F70507F23D70DDB00C6B556 /* Requests.swift in Sources */,
 				7F39A40423D07D0400BF6AB7 /* RestrictionListAppsViewController.swift in Sources */,
+				7F70507A23D6F6AE00C6B556 /* usertoken.swift in Sources */,
 				7FB5C35C23CF3ADF004C24E1 /* MainTableViewCell.swift in Sources */,
 				7F39A40823D086FE00BF6AB7 /* RestrictionDetailViewController.swift in Sources */,
 				7F39A3FF23D06EA900BF6AB7 /* UsageView.swift in Sources */,
 				7FA7F72F23CC87090013A022 /* AppDelegate.swift in Sources */,
 				7FB5C35E23CF3EAF004C24E1 /* MainViewController.swift in Sources */,
+				7F70508123D71A6700C6B556 /* Tonteria.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -372,6 +476,7 @@
 		};
 		7FA7F73E23CC870C0013A022 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 21CDFBED92264FD3BF62AEBB /* Pods-bienestapp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -389,6 +494,7 @@
 		};
 		7FA7F73F23CC870C0013A022 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2F262BB95C0A0D7D8ADDEF49 /* Pods-bienestapp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

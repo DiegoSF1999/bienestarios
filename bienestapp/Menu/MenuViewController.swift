@@ -10,8 +10,8 @@ import UIKit
 
 class MenuViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
-    let names:[String] = ["My Apps", "Restrictions", "Stadistics", "My Profile"]
-    let identifiers:[String] = ["MainView", "RestrictionView", "StadisticsView", "ProfileView"]
+    let names:[String] = ["My Apps", "Restrictions", "Stadistics", "My Profile", "Map"]
+    let identifiers:[String] = ["MainView", "RestrictionView", "StadisticsView", "ProfileView", "MapView"]
     
     @IBOutlet weak var table_view: UITableView!
     override func viewDidLoad() {
