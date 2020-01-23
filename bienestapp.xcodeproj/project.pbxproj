@@ -21,13 +21,14 @@
 		7F70508123D71A6700C6B556 /* Tonteria.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F70508023D71A6700C6B556 /* Tonteria.swift */; };
 		7FA7F72F23CC87090013A022 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FA7F72E23CC87090013A022 /* AppDelegate.swift */; };
 		7FA7F73123CC87090013A022 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FA7F73023CC87090013A022 /* ViewController.swift */; };
-		7FA7F73423CC87090013A022 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7FA7F73223CC87090013A022 /* Main.storyboard */; };
 		7FA7F73623CC870C0013A022 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7FA7F73523CC870C0013A022 /* Assets.xcassets */; };
 		7FA7F73923CC870C0013A022 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7FA7F73723CC870C0013A022 /* LaunchScreen.storyboard */; };
 		7FB5C35C23CF3ADF004C24E1 /* MainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FB5C35B23CF3ADF004C24E1 /* MainTableViewCell.swift */; };
 		7FB5C35E23CF3EAF004C24E1 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FB5C35D23CF3EAF004C24E1 /* MainViewController.swift */; };
 		7FB5C36023CF49E6004C24E1 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FB5C35F23CF49E6004C24E1 /* MenuViewController.swift */; };
 		7FB5C36223CF4A3D004C24E1 /* MenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FB5C36123CF4A3D004C24E1 /* MenuTableViewCell.swift */; };
+		7FD33D4023D9925D00D67A55 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7FD33D3F23D9925D00D67A55 /* Main.storyboard */; };
+		7FD33D4223D99D5A00D67A55 /* MainViewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FD33D4123D99D5A00D67A55 /* MainViewData.swift */; };
 		A18327213AD5E79331401E89 /* Pods_bienestapp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3071F49200CC5E0082CD2097 /* Pods_bienestapp.framework */; };
 /* End PBXBuildFile section */
 
@@ -50,7 +51,6 @@
 		7FA7F72B23CC87090013A022 /* bienestapp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = bienestapp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7FA7F72E23CC87090013A022 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7FA7F73023CC87090013A022 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		7FA7F73323CC87090013A022 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		7FA7F73523CC870C0013A022 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7FA7F73823CC870C0013A022 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7FA7F73A23CC870C0013A022 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -58,6 +58,8 @@
 		7FB5C35D23CF3EAF004C24E1 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		7FB5C35F23CF49E6004C24E1 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		7FB5C36123CF4A3D004C24E1 /* MenuTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuTableViewCell.swift; sourceTree = "<group>"; };
+		7FD33D3F23D9925D00D67A55 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		7FD33D4123D99D5A00D67A55 /* MainViewData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,8 +139,8 @@
 				7F39A40223D07C8C00BF6AB7 /* Restriction */,
 				7FA7F72E23CC87090013A022 /* AppDelegate.swift */,
 				7FB5C35323CF2651004C24E1 /* MainScreen */,
+				7FD33D3F23D9925D00D67A55 /* Main.storyboard */,
 				7FB5C35223CF2615004C24E1 /* login_register */,
-				7FA7F73223CC87090013A022 /* Main.storyboard */,
 				7FB5C35A23CF288D004C24E1 /* images */,
 				7FA7F73723CC870C0013A022 /* LaunchScreen.storyboard */,
 				7FA7F73A23CC870C0013A022 /* Info.plist */,
@@ -163,6 +165,7 @@
 				7FB5C35D23CF3EAF004C24E1 /* MainViewController.swift */,
 				7F39A3FE23D06EA900BF6AB7 /* UsageView.swift */,
 				7F39A40023D0706C00BF6AB7 /* UsageTableViewCell.swift */,
+				7FD33D4123D99D5A00D67A55 /* MainViewData.swift */,
 			);
 			path = MainScreen;
 			sourceTree = "<group>";
@@ -260,9 +263,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7FD33D4023D9925D00D67A55 /* Main.storyboard in Resources */,
 				7FA7F73923CC870C0013A022 /* LaunchScreen.storyboard in Resources */,
 				7FA7F73623CC870C0013A022 /* Assets.xcassets in Resources */,
-				7FA7F73423CC87090013A022 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -330,6 +333,7 @@
 				7FB5C35C23CF3ADF004C24E1 /* MainTableViewCell.swift in Sources */,
 				7F39A40823D086FE00BF6AB7 /* RestrictionDetailViewController.swift in Sources */,
 				7F39A3FF23D06EA900BF6AB7 /* UsageView.swift in Sources */,
+				7FD33D4223D99D5A00D67A55 /* MainViewData.swift in Sources */,
 				7FA7F72F23CC87090013A022 /* AppDelegate.swift in Sources */,
 				7FB5C35E23CF3EAF004C24E1 /* MainViewController.swift in Sources */,
 				7F70508123D71A6700C6B556 /* Tonteria.swift in Sources */,
@@ -339,14 +343,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		7FA7F73223CC87090013A022 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				7FA7F73323CC87090013A022 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		7FA7F73723CC870C0013A022 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
