@@ -18,16 +18,27 @@ class MainViewData {
     
     
     init(todo: [[String:Any]]) {
-                
-        for i in 0...(todo.count-1) {
+      
+      
             
-            self.ids.append(todo[i]["id"] as! Int)
-            self.names.append(todo[i]["name"] as! String)
-            self.icons.append(todo[i]["icon"] as! String)
-            self.daily.append(todo[i]["used_time"] as! String)
+            for i in 0...(todo.count-1) {
+                
+                self.ids.append(todo[i]["id"] as! Int)
+                self.names.append(todo[i]["name"] as! String)
+                self.icons.append(todo[i]["icon"] as! String)
+                
+         
+                if todo[0]["used_time"] == nil {
+                    self.daily.append("0")
+                } else {
+         self.daily.append(todo[i]["used_time"] as! String)
+                }
+         
+                
+                
+            
             
         }
-        
  
 
    // public func getappsdata(token:String){

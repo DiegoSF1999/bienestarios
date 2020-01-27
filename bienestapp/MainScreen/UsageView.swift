@@ -17,6 +17,10 @@ class UsageView: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //HACER APP_IMAGE
+        app_name.text = second_var
+        total_usage.text = third_var
 
         // Do any additional setup after loading the view.
     }

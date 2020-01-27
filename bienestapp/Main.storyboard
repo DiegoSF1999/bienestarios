@@ -662,8 +662,8 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="daily_time" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CRY-nP-yV4">
-                                                    <rect key="frame" x="259" y="9" width="75" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loading" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CRY-nP-yV4">
+                                                    <rect key="frame" x="273" y="9" width="61" height="21"/>
                                                     <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -1491,7 +1491,7 @@
         <segue reference="6U7-4Y-1WT"/>
         <segue reference="b5e-ER-MJt"/>
         <segue reference="6ms-4b-FV0"/>
-        <segue reference="qMM-Ci-Y6N"/>
+        <segue reference="Bnu-KY-zxw"/>
         <segue reference="ame-sl-64k"/>
     </inferredMetricsTieBreakers>
 </document>

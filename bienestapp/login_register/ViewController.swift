@@ -40,7 +40,7 @@ class ViewController: UIViewController {
             
          //   let reqsinv = Requests()
             
-            login(email: "cevasdf1234@yopmail.com", password: "O0rwW9c8")
+            self.login(email: "cevasdf1234@yopmail.com", password: "O0rwW9c8")
        
             
            // reqsinv.getTonterias()
@@ -62,11 +62,11 @@ class ViewController: UIViewController {
                 
                 self.hidden_text.text = token.token
                 
-                               
+                
                 if token.token == "" {
-                     self.wrong_crdentials_label.isHidden = false
-                    self.login_button.setTitle("LOGIN", for: .normal)
-                    self.login_button.isEnabled = true
+                    self.badlogin()
+                    self.wrong_crdentials_label.isHidden = false
+                    
                 } else {
                     self.continuelogin()
                 }
@@ -83,11 +83,16 @@ class ViewController: UIViewController {
         //aqui no
     }
     
+    func badlogin() {
+        self.login_button.setTitle("LOGIN", for: .normal)
+        self.login_button.isEnabled = true
+    }
+    
    
     func continuelogin(){
  
-        setSavedToken()
-        getMainData()
+        self.setSavedToken()
+        self.getMainData()
        
         
     }
@@ -97,20 +102,27 @@ class ViewController: UIViewController {
         
         let name = UserDefaults.standard.string(forKey: "token")
         
-        if name == nil
+        didload = true
+        all.isHidden = false
+        
+        
+      /*  if name == nil
         {
             didload = true
             all.isHidden = false
             
         } else {
-            print(name)
-        }
+            
+            self.hidden_text.text = name
+            self.continuelogin()  // aqui hay que decirle que se logue directamente
+        }*/
     
     }
     
     func setSavedToken()
     {
 
+        // saved_token = self.hidden_text.text!
         saved_token = self.hidden_text.text!
 
         
@@ -124,16 +136,50 @@ class ViewController: UIViewController {
         let formattedDate = format.string(from: date)
         
         Alamofire.request("http://127.0.0.1:8888/Diego/bienestar/public/index.php/api/todayuse", method: .post, parameters: ["date":formattedDate], headers: ["token": saved_token]).responseJSON { response in // method defaults to `.get`
+            
+             if response.result.isFailure {
+                self.badlogin()
+                
+                saved_token = ""
+                self.didload = true
+                self.all.isHidden = false
+
+                
+             } else {
+            
             let data = response.result.value as! [[String : Any]]
             
-            cellsdatamain = MainViewData(todo: data)
             
-            print("en view: ", cellsdatamain?.names)
+            if data.isEmpty {
+                
+                
+                Alamofire.request("http://127.0.0.1:8888/Diego/bienestar/public/index.php/api/myapps", method: .get, headers: ["token": saved_token]).responseJSON { response in // method defaults to `.get`
+                    let data_alter = response.result.value as! [[String : Any]]
+                    
+                       cellsdatamain = MainViewData(todo: data_alter)
+                    
+                    self.dismiss(animated: true)
+                    
+                      self.performSegue(withIdentifier: "LoginToMain", sender: Any?.self)
+                    
+                    
+                    
+                    
+                    
+                }
+                
+                
+            } else {
+                
+                
+                   cellsdatamain = MainViewData(todo: data)
+                self.dismiss(animated: true)
+                   self.performSegue(withIdentifier: "LoginToMain", sender: Any?.self)
+                
+                
+            }
             
-             self.performSegue(withIdentifier: "LoginToMain", sender: Any?.self)
-            
-            
-            
+            }
         }
         
     }
