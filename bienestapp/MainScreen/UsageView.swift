@@ -18,7 +18,10 @@ class UsageView: UIViewController, UITableViewDelegate, UITableViewDataSource {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //HACER APP_IMAGE
+        // esto de momento
+         let url_converted: URL = URL(string: "https://fatimamartinez.es/wp-content/uploads/2018/09/Instagram-logo-de-600-600x600.jpg")!
+        
+        app_image.load(url: url_converted)
         app_name.text = second_var
         total_usage.text = third_var
 
@@ -26,7 +29,7 @@ class UsageView: UIViewController, UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return arr.count
+        return cellsdatausage?.date.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
@@ -36,8 +39,8 @@ class UsageView: UIViewController, UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "UsageCell", for: indexPath) as! UsageTableViewCell
         
-        cell.date_label.text = arr[indexPath.row]
-        cell.daily_used_label.text = String(indexPath.row)
+        cell.date_label.text = cellsdatausage?.date[indexPath.row]
+        cell.daily_used_label.text = cellsdatausage?.used_time[indexPath.row]
         return cell
     }
     

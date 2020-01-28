@@ -10,6 +10,7 @@ import UIKit
 import Alamofire
 
 var cellsdatamain: MainViewData? = nil
+var cellsdatausage: UsageViewData? = nil
 var selectedcell: Int = 0
 var first_var: String = String()
 var second_var: String = String()
@@ -54,61 +55,36 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         tableView.isUserInteractionEnabled = false
         
+        print(cellsdatamain!.total)
         
-        Alamofire.request("http://127.0.0.1:8888/Diego/bienestar/public/index.php/api/totaluse", method: .get, headers: ["token": saved_token]).responseJSON { response in // method defaults to `.get`
-            
-            let id_of_app: Int = cellsdatamain!.ids[indexPath.row]
-            
-            let data = response.result.value as! [[String : Any]]
-            
-            if data.isEmpty {
-                
-                print("esta empty")
-            } else {
-              
                 first_var = cellsdatamain!.icons[indexPath.row]
                 second_var = cellsdatamain!.names[indexPath.row]
+                third_var = cellsdatamain!.total[indexPath.row]
+        
+        let app_id: Int = cellsdatamain!.ids[indexPath.row]
+        
+        
+        Alamofire.request("http://127.0.0.1:8888/Diego/bienestar/public/index.php/api/usages", method: .get, parameters: ["app_id": app_id], headers: ["token": saved_token]).responseJSON { response in // method defaults to `.get`
+            
+            let usages_data = response.result.value as! [[String : Any]]
+            
+            if usages_data.isEmpty {
                 
-                var temp_var:String = "0"
+            
+            } else {
                 
-                for i in 0...(data.count-1) {
-                    
-                    
-                    
-                    if data[i]["app_id"] as! Int == id_of_app {
-                        
-                        var operation: String = data[i]["used_time"] as! String
-                        //operation /= 216000
-                        
-                        
-                        print(Int(operation)!/216000)       // SEGUIR AQUI
-                        third_var = operation
-                        
-                    }
-                    
-                    
-                }
+                cellsdatausage = UsageViewData(todo: usages_data)
                 
-              
-                
-                
-                print("tercera es", third_var)
             }
+   
             
            self.performSegue(withIdentifier: "MainToUsage", sender: self)
 
             
               tableView.isUserInteractionEnabled = true
-    
+     
             
-       
-            
-            
-            
- 
-            
-            
-            
+        }
         }
         
       
@@ -137,7 +113,7 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
     
 
 
-}
+
 
 extension UIImageView {
     func load(url: URL) {

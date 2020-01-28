@@ -29,6 +29,7 @@
 		7FB5C36223CF4A3D004C24E1 /* MenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FB5C36123CF4A3D004C24E1 /* MenuTableViewCell.swift */; };
 		7FD33D4023D9925D00D67A55 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7FD33D3F23D9925D00D67A55 /* Main.storyboard */; };
 		7FD33D4223D99D5A00D67A55 /* MainViewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FD33D4123D99D5A00D67A55 /* MainViewData.swift */; };
+		7FFE6F4E23E04FAB00FCEE4D /* UsageViewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FFE6F4D23E04FAB00FCEE4D /* UsageViewData.swift */; };
 		A18327213AD5E79331401E89 /* Pods_bienestapp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3071F49200CC5E0082CD2097 /* Pods_bienestapp.framework */; };
 /* End PBXBuildFile section */
 
@@ -60,6 +61,7 @@
 		7FB5C36123CF4A3D004C24E1 /* MenuTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuTableViewCell.swift; sourceTree = "<group>"; };
 		7FD33D3F23D9925D00D67A55 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		7FD33D4123D99D5A00D67A55 /* MainViewData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewData.swift; sourceTree = "<group>"; };
+		7FFE6F4D23E04FAB00FCEE4D /* UsageViewData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsageViewData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -165,6 +167,7 @@
 				7FB5C35D23CF3EAF004C24E1 /* MainViewController.swift */,
 				7F39A3FE23D06EA900BF6AB7 /* UsageView.swift */,
 				7F39A40023D0706C00BF6AB7 /* UsageTableViewCell.swift */,
+				7FFE6F4D23E04FAB00FCEE4D /* UsageViewData.swift */,
 				7FD33D4123D99D5A00D67A55 /* MainViewData.swift */,
 			);
 			path = MainScreen;
@@ -322,6 +325,7 @@
 				7FA7F73123CC87090013A022 /* ViewController.swift in Sources */,
 				7FB5C36023CF49E6004C24E1 /* MenuViewController.swift in Sources */,
 				7F39A40623D07D6700BF6AB7 /* RestrictionCellTableViewCell.swift in Sources */,
+				7FFE6F4E23E04FAB00FCEE4D /* UsageViewData.swift in Sources */,
 				7F65D17523D5A8E2008E1E97 /* ProfileViewController.swift in Sources */,
 				7F39A40B23D0973800BF6AB7 /* StadisticsViewController.swift in Sources */,
 				7FB5C36223CF4A3D004C24E1 /* MenuTableViewCell.swift in Sources */,

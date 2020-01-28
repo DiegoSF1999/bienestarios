@@ -131,9 +131,14 @@ class ViewController: UIViewController {
     func getMainData(){
         
         let date = Date()
+        
+       
+        
         let format = DateFormatter()
         format.dateFormat = "yyyy-MM-dd"
         let formattedDate = format.string(from: date)
+        
+        print("date es: ", formattedDate)
         
         Alamofire.request("http://127.0.0.1:8888/Diego/bienestar/public/index.php/api/todayuse", method: .post, parameters: ["date":formattedDate], headers: ["token": saved_token]).responseJSON { response in // method defaults to `.get`
             
@@ -148,6 +153,8 @@ class ViewController: UIViewController {
              } else {
             
             let data = response.result.value as! [[String : Any]]
+                
+                print("data es: ", data)
             
             
             if data.isEmpty {
@@ -172,8 +179,10 @@ class ViewController: UIViewController {
             } else {
                 
                 
+                
+                
                    cellsdatamain = MainViewData(todo: data)
-                self.dismiss(animated: true)
+              //  self.dismiss(animated: true)
                    self.performSegue(withIdentifier: "LoginToMain", sender: Any?.self)
                 
                 
