@@ -10,10 +10,6 @@ import UIKit
 
 class RestrictionListAppsViewController: UIViewController,  UITableViewDelegate, UITableViewDataSource {
     
-    let arr:[String] = ["uno", "dos", "tres", "cuatro"]
-
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -21,7 +17,7 @@ class RestrictionListAppsViewController: UIViewController,  UITableViewDelegate,
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return arr.count
+        return (cellsdatamain?.names.count)!
     }
     
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
@@ -32,7 +28,13 @@ class RestrictionListAppsViewController: UIViewController,  UITableViewDelegate,
         let cell = tableView.dequeueReusableCell(withIdentifier: "RestrictionCell", for: indexPath) as! RestrictionCellTableViewCell
         
         cell.app_image.image = #imageLiteral(resourceName: "icon_example")
-        cell.app_name.text = arr[indexPath.row]
+        cell.app_name.text = cellsdatamain?.names[indexPath.row]
+        let id: Int = (cellsdatamain?.ids[indexPath.row])!
+        
+        cell.id_text_field.text = String(id)
+        
+        
+   
         
   
         return cell
@@ -40,8 +42,15 @@ class RestrictionListAppsViewController: UIViewController,  UITableViewDelegate,
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
+        
+        
+        
         performSegue(withIdentifier: "RestrictionListToDetail", sender: self)
         
+    }
+    
+    public func pressed(){
+        print("porva funcuiona")
     }
     
 

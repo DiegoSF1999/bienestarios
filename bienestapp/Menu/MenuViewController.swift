@@ -7,6 +7,9 @@
 //
 
 import UIKit
+import Alamofire
+
+var cellsdatarestrictions: RestrictionData? = nil
 
 class MenuViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
@@ -36,8 +39,38 @@ class MenuViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        switch indexPath.row {
+            
+        case 1:
+            
+            Alamofire.request("http://127.0.0.1:8888/Diego/bienestar/public/index.php/api/restrictions", method: .get, headers: ["token": saved_token]).responseJSON { response in // method defaults to `.get`
+                
+                let restriction_data = response.result.value as! [[String : Any]]
+                
+                if !restriction_data.isEmpty {
+                    
+            
+                    cellsdatarestrictions = RestrictionData(todo: restriction_data)
+                    
+                    self.performSegue(withIdentifier: self.identifiers[indexPath.row], sender: self)
+                    
+                }
+                
+            }
+            
+            
+            
+            break
+            
+        default:
+            
+            performSegue(withIdentifier: identifiers[indexPath.row], sender: self)
+            break
+            
+        }
    
-        performSegue(withIdentifier: identifiers[indexPath.row], sender: self)
+        
     
     }
     

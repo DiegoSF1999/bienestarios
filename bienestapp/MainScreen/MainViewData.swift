@@ -34,11 +34,11 @@ class MainViewData {
                     self.daily.append("0")
                 } else {
                     
-                    let string_num: String = todo[i]["used_time"] as! String
+                    let double_num: Double = todo[i]["used_time"] as! Double
                     
-                    let int_num: Int = Int(string_num)! / 60000
+                    let time_num:TimeInterval = TimeInterval(double_num)
                     
-                    let def_num:String = String(int_num)
+                    let def_num: String = String(time_num)
                     
                     self.daily.append(def_num)
                 }
@@ -70,7 +70,7 @@ class MainViewData {
                 
                 for o in 0...(todo.count-1) {
                     
-                    total_use = "0"                    
+                    total_use = "0"
                    
                       
                         let app_id: Int = todo[o]["id"] as! Int
@@ -83,13 +83,11 @@ class MainViewData {
                             if total_use_data[u]["app_id"] as! Int == app_id {
                                 
                                 
-                                total_use = total_use_data[u]["used_time"] as! String
+                                let double_num: Double = total_use_data[u]["used_time"] as! Double
                                 
-                                let string_num: String = total_use
+                                let time_num:TimeInterval = TimeInterval(double_num)
                                 
-                                let int_num: Int = Int(string_num)! / 60000
-                                
-                                let def_num:String = String(int_num)
+                                let def_num: String = String(time_num)
                                 
                                 total_use = def_num
                                 
@@ -145,15 +143,12 @@ class MainViewData {
                             
                             if average_use_data[e]["app_id"] as! Int == app_id {
                                 
-                                
-                                average_use = average_use_data[e]["used_time"] as! String
-                                
                             
-                                let string_num: String = average_use
+                                let double_num: Double = average_use_data[e]["used_time"] as! Double
                                 
-                                let int_num: Double = Double(string_num)! / 60000
+                                let time_num:TimeInterval = TimeInterval(double_num)
                                 
-                                let def_num:String = String(int_num)
+                                let def_num: String = String(time_num)
                                 
                                 average_use = def_num
                           

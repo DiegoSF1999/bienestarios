@@ -138,8 +138,6 @@ class ViewController: UIViewController {
         format.dateFormat = "yyyy-MM-dd"
         let formattedDate = format.string(from: date)
         
-        print("date es: ", formattedDate)
-        
         Alamofire.request("http://127.0.0.1:8888/Diego/bienestar/public/index.php/api/todayuse", method: .post, parameters: ["date":formattedDate], headers: ["token": saved_token]).responseJSON { response in // method defaults to `.get`
             
              if response.result.isFailure {
@@ -152,10 +150,7 @@ class ViewController: UIViewController {
                 
              } else {
             
-            let data = response.result.value as! [[String : Any]]
-                
-                print("data es: ", data)
-            
+            let data = response.result.value as! [[String : Any]]            
             
             if data.isEmpty {
                 

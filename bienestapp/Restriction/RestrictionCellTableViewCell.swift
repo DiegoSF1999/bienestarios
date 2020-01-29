@@ -7,12 +7,13 @@
 //
 
 import UIKit
+import Alamofire
 
 class RestrictionCellTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var app_switch: UISwitch!
     @IBOutlet weak var app_image: UIImageView!
-    
-
+    @IBOutlet weak var id_text_field: UITextField!
     @IBOutlet weak var app_name: UILabel!
     
     override func awakeFromNib() {
@@ -27,10 +28,37 @@ class RestrictionCellTableViewCell: UITableViewCell {
     }
     
     
-    @IBAction func restriction_switch(_ sender: UISwitch) {
+    
+    @IBAction func app_switch(_ sender: UISwitch) {
         
-       // setSelected(true, animated: true)
+        print("estoy")
         
+     /*   app_switch.isEnabled = false
+        
+        let id_string:String = id_text_field.text!
+        
+        let id_int: Int = Int(id_string)!
+        
+        if app_switch.isOn {
+            
+            print("ha entrado")
+            
+            Alamofire.request("http://127.0.0.1:8888/Diego/bienestar/public/index.php/api/restrictionremove", method: .post, parameters: ["app_id": id_int], headers: ["token": saved_token]).responseJSON { response in // method defaults to `.get`
+                
+                let restriction_data = response.result
+                
+                print("respuesta: ",restriction_data)
+                
+            }
+            
+            
+        } else {
+            
+            
+            
+        }*/
+ 
+ 
     }
     
     

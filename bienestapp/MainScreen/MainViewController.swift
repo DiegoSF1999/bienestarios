@@ -55,8 +55,6 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         tableView.isUserInteractionEnabled = false
         
-        print(cellsdatamain!.total)
-        
                 first_var = cellsdatamain!.icons[indexPath.row]
                 second_var = cellsdatamain!.names[indexPath.row]
                 third_var = cellsdatamain!.total[indexPath.row]
