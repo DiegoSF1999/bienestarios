@@ -21,9 +21,11 @@ class UsageViewData {
             
             self.date.append(todo[i]["date"] as! String)
             
-            let string_num: String = todo[i]["used_time"] as! String
+            let raw_num: Double = todo[i]["used_time"] as! Double
             
-            let int_num: Int = Int(string_num)! / 60000
+            let double_num: Double = raw_num / 60000.00
+            
+            let int_num: Int = Int(double_num)
             
             let def_num:String = String(int_num)
             

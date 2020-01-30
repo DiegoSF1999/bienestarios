@@ -19,7 +19,7 @@ class MainViewData {
     var average: [String] = []
     
     
-    init(todo: [[String:Any]]) {
+    init(todo: [[String:Any]], daily_usage: [String]) {
       
       
             
@@ -28,25 +28,12 @@ class MainViewData {
                 self.ids.append(todo[i]["id"] as! Int)
                 self.names.append(todo[i]["name"] as! String)
                 self.icons.append(todo[i]["icon"] as! String)
-                
-         
-                if todo[0]["used_time"] == nil {
-                    self.daily.append("0")
-                } else {
-                    
-                    let double_num: Double = todo[i]["used_time"] as! Double
-                    
-                    let time_num:TimeInterval = TimeInterval(double_num)
-                    
-                    let def_num: String = String(time_num)
-                    
-                    self.daily.append(def_num)
-                }
      
         }
         
+        self.daily = daily_usage
         
-        
+       
         Alamofire.request("http://127.0.0.1:8888/Diego/bienestar/public/index.php/api/totaluse", method: .get, headers: ["token": saved_token]).responseJSON { response in // method defaults to `.get`
             
             let total_use_data = response.result.value as! [[String : Any]]
@@ -83,11 +70,13 @@ class MainViewData {
                             if total_use_data[u]["app_id"] as! Int == app_id {
                                 
                                 
-                                let double_num: Double = total_use_data[u]["used_time"] as! Double
+                                var double_num: Double = total_use_data[u]["used_time"] as! Double
                                 
-                                let time_num:TimeInterval = TimeInterval(double_num)
+                                double_num /= 60000.00
                                 
-                                let def_num: String = String(time_num)
+                                let int_num:Int = Int(double_num)
+                                
+                                let def_num: String = String(int_num)
                                 
                                 total_use = def_num
                                 
@@ -144,11 +133,13 @@ class MainViewData {
                             if average_use_data[e]["app_id"] as! Int == app_id {
                                 
                             
-                                let double_num: Double = average_use_data[e]["used_time"] as! Double
+                                var double_num: Double = average_use_data[e]["used_time"] as! Double
                                 
-                                let time_num:TimeInterval = TimeInterval(double_num)
+                                double_num /= 60000.00
                                 
-                                let def_num: String = String(time_num)
+                                let int_num:Int = Int(double_num)
+                                
+                                let def_num: String = String(int_num)
                                 
                                 average_use = def_num
                           

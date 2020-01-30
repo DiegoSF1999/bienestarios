@@ -12,6 +12,7 @@ import Alamofire
 var cellsdatamain: MainViewData? = nil
 var cellsdatausage: UsageViewData? = nil
 var selectedcell: Int = 0
+
 var first_var: String = String()
 var second_var: String = String()
 var third_var: String = String()
@@ -47,8 +48,13 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         cell.app_image.load(url: url_converted)
         cell.app_name.text = cellsdatamain!.names[indexPath.row]
+        
         cell.app_daily_used.text = cellsdatamain!.daily[indexPath.row]
+            
+        
         return cell
+       
+       
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -62,7 +68,7 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         let app_id: Int = cellsdatamain!.ids[indexPath.row]
         
         
-        Alamofire.request("http://127.0.0.1:8888/Diego/bienestar/public/index.php/api/usages", method: .get, parameters: ["app_id": app_id], headers: ["token": saved_token]).responseJSON { response in // method defaults to `.get`
+        Alamofire.request("http://127.0.0.1:8888/Diego/bienestar/public/index.php/api/getusages", method: .post, parameters: ["app_id": app_id], headers: ["token": saved_token]).responseJSON { response in // method defaults to `.get`
             
             let usages_data = response.result.value as! [[String : Any]]
             

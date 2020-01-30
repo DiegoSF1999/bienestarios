@@ -10,6 +10,10 @@ import UIKit
 
 class RestrictionListAppsViewController: UIViewController,  UITableViewDelegate, UITableViewDataSource {
     
+    func press(){
+        print("estoy")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -33,7 +37,17 @@ class RestrictionListAppsViewController: UIViewController,  UITableViewDelegate,
         
         cell.id_text_field.text = String(id)
         
+        for i in 0...((cellsdatarestrictions?.app_ids.count)!-1) {
+            
+            if cellsdatarestrictions?.app_ids[i] == cellsdatamain?.ids[indexPath.row] {
+                
+                 cell.accessoryType = .checkmark
+                
+            }
+            
+        }
         
+      
    
         
   

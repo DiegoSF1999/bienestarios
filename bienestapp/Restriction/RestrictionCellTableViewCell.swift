@@ -9,9 +9,12 @@
 import UIKit
 import Alamofire
 
+
+
 class RestrictionCellTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var app_switch: UISwitch!
+
+    @IBOutlet weak var deactivate_button: UIButton!
     @IBOutlet weak var app_image: UIImageView!
     @IBOutlet weak var id_text_field: UITextField!
     @IBOutlet weak var app_name: UILabel!
@@ -28,10 +31,9 @@ class RestrictionCellTableViewCell: UITableViewCell {
     }
     
     
-    
     @IBAction func app_switch(_ sender: UISwitch) {
         
-        print("estoy")
+       
         
      /*   app_switch.isEnabled = false
         
