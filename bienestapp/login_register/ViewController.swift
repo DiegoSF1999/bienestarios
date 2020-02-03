@@ -154,29 +154,34 @@ class ViewController: UIViewController {
                             
                             var daily_use: [String] = []
                             
+                            
                             for i in 0...(data.count-1) {
                                 
                                 var used_time: String = "0"
                                 
-                                for o in 0...(data_daily.count-1) {
+                                if !data_daily.isEmpty {
                                     
                                     
-                                    if data[i]["id"] as! Int == data_daily[o]["app_id"] as! Int {
+                                    for o in 0...(data_daily.count-1) {
                                         
-                                        var double_num: Double = data_daily[o]["used_time"] as! Double
-                                        
-                                        double_num /= 60000.00
-                                        
-                                        let int_num:Int = Int(double_num)
-                                        
-                                        let def_num: String = String(int_num)
-                                        
-                                        used_time = def_num
-                                        
+                                        if data[i]["id"] as! Int == data_daily[o]["app_id"] as! Int {
+                                            
+                                            var double_num: Double = data_daily[o]["used_time"] as! Double
+                                            
+                                            double_num /= 60000.00
+                                            
+                                            let int_num:Int = Int(double_num)
+                                            
+                                            let def_num: String = String(int_num)
+                                            
+                                            used_time = def_num
+                                            
+                                        }
                                         
                                     }
                                     
                                 }
+                                
                                 
                                 daily_use.append(used_time)
                                 

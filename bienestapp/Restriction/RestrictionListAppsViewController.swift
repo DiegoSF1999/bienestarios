@@ -10,10 +10,6 @@ import UIKit
 
 class RestrictionListAppsViewController: UIViewController,  UITableViewDelegate, UITableViewDataSource {
     
-    func press(){
-        print("estoy")
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -33,9 +29,6 @@ class RestrictionListAppsViewController: UIViewController,  UITableViewDelegate,
         
         cell.app_image.image = #imageLiteral(resourceName: "icon_example")
         cell.app_name.text = cellsdatamain?.names[indexPath.row]
-        let id: Int = (cellsdatamain?.ids[indexPath.row])!
-        
-        cell.id_text_field.text = String(id)
         
         for i in 0...((cellsdatarestrictions?.app_ids.count)!-1) {
             
@@ -56,15 +49,11 @@ class RestrictionListAppsViewController: UIViewController,  UITableViewDelegate,
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        
+        selectedcell = indexPath.row
         
         
         performSegue(withIdentifier: "RestrictionListToDetail", sender: self)
         
-    }
-    
-    public func pressed(){
-        print("porva funcuiona")
     }
     
 

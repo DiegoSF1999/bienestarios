@@ -20,7 +20,7 @@ class RestrictionData {
     init(todo: [[String:Any]]) {
         
         
-        
+        print("todo es: ", todo)
         
         for i in 0...(todo.count-1) {
             
