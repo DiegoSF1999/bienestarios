@@ -14,6 +14,7 @@
 		7F39A40823D086FE00BF6AB7 /* RestrictionDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F39A40723D086FE00BF6AB7 /* RestrictionDetailViewController.swift */; };
 		7F39A40B23D0973800BF6AB7 /* StadisticsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F39A40A23D0973800BF6AB7 /* StadisticsViewController.swift */; };
 		7F39A40D23D097A600BF6AB7 /* StadisticsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F39A40C23D097A600BF6AB7 /* StadisticsTableViewCell.swift */; };
+		7F545DEB23E975B4006B3835 /* StadisticsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F545DEA23E975B4006B3835 /* StadisticsData.swift */; };
 		7F65D17523D5A8E2008E1E97 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F65D17423D5A8E2008E1E97 /* ProfileViewController.swift */; };
 		7F70507A23D6F6AE00C6B556 /* usertoken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F70507923D6F6AE00C6B556 /* usertoken.swift */; };
 		7F70507D23D70D8C00C6B556 /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F70507C23D70D8C00C6B556 /* Token.swift */; };
@@ -45,6 +46,7 @@
 		7F39A40723D086FE00BF6AB7 /* RestrictionDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestrictionDetailViewController.swift; sourceTree = "<group>"; };
 		7F39A40A23D0973800BF6AB7 /* StadisticsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StadisticsViewController.swift; sourceTree = "<group>"; };
 		7F39A40C23D097A600BF6AB7 /* StadisticsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StadisticsTableViewCell.swift; sourceTree = "<group>"; };
+		7F545DEA23E975B4006B3835 /* StadisticsData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StadisticsData.swift; sourceTree = "<group>"; };
 		7F65D17423D5A8E2008E1E97 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		7F70507923D6F6AE00C6B556 /* usertoken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = usertoken.swift; sourceTree = "<group>"; };
 		7F70507C23D70D8C00C6B556 /* Token.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Token.swift; sourceTree = "<group>"; };
@@ -94,6 +96,7 @@
 			children = (
 				7F39A40A23D0973800BF6AB7 /* StadisticsViewController.swift */,
 				7F39A40C23D097A600BF6AB7 /* StadisticsTableViewCell.swift */,
+				7F545DEA23E975B4006B3835 /* StadisticsData.swift */,
 			);
 			path = Stadistics;
 			sourceTree = "<group>";
@@ -340,6 +343,7 @@
 				7F70507A23D6F6AE00C6B556 /* usertoken.swift in Sources */,
 				7FB5C35C23CF3ADF004C24E1 /* MainTableViewCell.swift in Sources */,
 				7F39A40823D086FE00BF6AB7 /* RestrictionDetailViewController.swift in Sources */,
+				7F545DEB23E975B4006B3835 /* StadisticsData.swift in Sources */,
 				7F39A3FF23D06EA900BF6AB7 /* UsageView.swift in Sources */,
 				7FD33D4223D99D5A00D67A55 /* MainViewData.swift in Sources */,
 				7FA7F72F23CC87090013A022 /* AppDelegate.swift in Sources */,

@@ -27,17 +27,21 @@ class RestrictionListAppsViewController: UIViewController,  UITableViewDelegate,
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "RestrictionCell", for: indexPath) as! RestrictionCellTableViewCell
         
-        cell.app_image.image = #imageLiteral(resourceName: "icon_example")
+        let url_converted: URL = URL(string: "https://fatimamartinez.es/wp-content/uploads/2018/09/Instagram-logo-de-600-600x600.jpg")!
+        
+        cell.app_image.load(url: url_converted)
         cell.app_name.text = cellsdatamain?.names[indexPath.row]
         
-        for i in 0...((cellsdatarestrictions?.app_ids.count)!-1) {
-            
-            if cellsdatarestrictions?.app_ids[i] == cellsdatamain?.ids[indexPath.row] {
+        if !(cellsdatarestrictions?.app_ids.isEmpty)! {
+            for i in 0...((cellsdatarestrictions?.app_ids.count)!-1) {
                 
-                 cell.accessoryType = .checkmark
-                
-            }
-            
+                if cellsdatarestrictions?.app_ids[i] == cellsdatamain?.ids[indexPath.row] {
+                    
+                    cell.accessoryType = .checkmark
+                    
+                }
+        }
+                    
         }
         
       

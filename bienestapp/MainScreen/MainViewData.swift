@@ -16,7 +16,7 @@ class MainViewData {
     var icons: [String] = []
     var daily: [String] = []
     var total: [String] = []
-    var average: [String] = []
+    var average_day: [String] = []
     
     
     init(todo: [[String:Any]], daily_usage: [String]) {
@@ -112,7 +112,7 @@ class MainViewData {
                     
                     for i in 0...(todo.count-1) {
                         
-                        self.average.append("0")
+                        self.average_day.append("0")
                         
                     }
                 } else {
@@ -152,7 +152,7 @@ class MainViewData {
                         
                         }
                         
-                        self.average.append(average_use)
+                        self.average_day.append(average_use)
                         
                         
                         

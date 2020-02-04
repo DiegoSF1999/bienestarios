@@ -13,6 +13,7 @@ class RestrictionDetailViewController: UIViewController {
     
     var didexist: Bool = false
 
+    @IBOutlet weak var app_image: UIImageView!
     @IBOutlet weak var app_name: UILabel!
     @IBOutlet weak var allowed_timer: UIDatePicker!
     @IBOutlet weak var app_total_use: UILabel!
@@ -25,7 +26,9 @@ class RestrictionDetailViewController: UIViewController {
         super.viewDidLoad()
         
         
+        let url_converted: URL = URL(string: "https://fatimamartinez.es/wp-content/uploads/2018/09/Instagram-logo-de-600-600x600.jpg")!
         
+        app_image.load(url: url_converted)
         app_name.text = cellsdatamain?.names[selectedcell]
         app_total_use.text = cellsdatamain?.total[selectedcell]
         
@@ -34,6 +37,9 @@ class RestrictionDetailViewController: UIViewController {
         
         allowed_timer.date = formatter.date(from: "1970/01/01 00:00")!
         
+        if (cellsdatarestrictions?.app_ids.isEmpty)! {
+        } else {
+        
         for i in 0...((cellsdatarestrictions?.app_ids.count)!-1) {
             
             if cellsdatamain?.ids[selectedcell] == cellsdatarestrictions?.app_ids[i] {
@@ -41,16 +47,10 @@ class RestrictionDetailViewController: UIViewController {
                 didexist = true
                 
                 var max_time:Int = Int((cellsdatarestrictions?.maximun_time[i])!)
-                max_time *= 1000
       
                 var start_hour: Int = Int((cellsdatarestrictions?.start_hour[i])!)
                 
-                start_hour *= 1000
-                
-                
                 var finish_hour: Int = Int((cellsdatarestrictions?.finish_hour[i])!)
-                finish_hour *= 1000
-                
                 
                 var date = Date(timeIntervalSince1970: TimeInterval(max_time))
                 
@@ -60,8 +60,6 @@ class RestrictionDetailViewController: UIViewController {
                 
                 start_hour_picker.date = date
                 
-                print("date es:",start_hour_picker.date.timeIntervalSince1970)
-                
                 date = Date(timeIntervalSince1970: TimeInterval(finish_hour))
                 
                 finish_hour_picker.date = date
@@ -69,6 +67,7 @@ class RestrictionDetailViewController: UIViewController {
                 
             }
             
+            }
             
         }
 
@@ -93,7 +92,7 @@ class RestrictionDetailViewController: UIViewController {
         save_button.isEnabled = false
         delete_button.isHidden = true
         
-        let params: [String:Any] = ["maximun_time": Int(allowed_timer.date.timeIntervalSince1970/1000), "start_hour": Int(start_hour_picker.date.timeIntervalSince1970/1000), "finish_hour": Int(finish_hour_picker.date.timeIntervalSince1970/1000), "app_id": (cellsdatamain?.ids[selectedcell])!]
+        let params: [String:Any] = ["maximun_time": Int(allowed_timer.date.timeIntervalSince1970), "start_hour": Int(start_hour_picker.date.timeIntervalSince1970), "finish_hour": Int(finish_hour_picker.date.timeIntervalSince1970), "app_id": (cellsdatamain?.ids[selectedcell])!]
         
         if self.didexist {
             

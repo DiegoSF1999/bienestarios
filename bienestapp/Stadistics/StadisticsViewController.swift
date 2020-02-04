@@ -23,6 +23,8 @@ class StadisticsViewController: UIViewController, UITableViewDelegate, UITableVi
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
 
     }
     

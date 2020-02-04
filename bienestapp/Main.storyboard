@@ -545,7 +545,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="CiH-8u-YGR">
-                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <color key="sectionIndexBackgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <prototypes>
@@ -1010,6 +1010,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="allowed_timer" destination="dpQ-zK-gqT" id="8bS-fU-S5p"/>
+                        <outlet property="app_image" destination="A49-kx-Bme" id="j2P-ce-Hp7"/>
                         <outlet property="app_name" destination="aak-Ab-0Ac" id="vkq-Yt-tX6"/>
                         <outlet property="app_total_use" destination="jN5-LH-MxE" id="qZt-H6-6y8"/>
                         <outlet property="delete_button" destination="GjT-4V-Yzm" id="VyP-Yu-qsr"/>
@@ -1486,12 +1487,11 @@
         <image name="icon_example" width="225" height="225"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Tcw-1i-vA5"/>
         <segue reference="560-N8-wjM"/>
         <segue reference="iFU-3P-obY"/>
         <segue reference="KMP-ma-5Dk"/>
         <segue reference="nBm-aw-ZrL"/>
-        <segue reference="YTg-QX-D7q"/>
+        <segue reference="6xw-tD-uMm"/>
         <segue reference="ame-sl-64k"/>
     </inferredMetricsTieBreakers>
 </document>

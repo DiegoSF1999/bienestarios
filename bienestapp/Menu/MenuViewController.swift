@@ -48,14 +48,14 @@ class MenuViewController: UIViewController, UITableViewDelegate, UITableViewData
                 
                 let restriction_data = response.result.value as! [[String : Any]]
                 
-                if !restriction_data.isEmpty {
+                //if !restriction_data.isEmpty {
                     
             
                     cellsdatarestrictions = RestrictionData(todo: restriction_data)
                     
                     self.performSegue(withIdentifier: self.identifiers[indexPath.row], sender: self)
                     
-                }
+                //}
                 
             }
             
