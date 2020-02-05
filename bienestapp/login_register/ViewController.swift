@@ -187,23 +187,21 @@ class ViewController: UIViewController {
                                 
                             }
                             
-                            
-                            
-                        
-                        
-                        
-                        
-                    
+             
                        cellsdatamain = MainViewData(todo: data, daily_usage: daily_use)
-                    
-                    self.dismiss(animated: true)
-                    
-                      self.performSegue(withIdentifier: "LoginToMain", sender: Any?.self)
-                    
-                    
-                    
-                    
-                    
+                            
+                            Alamofire.request("http://127.0.0.1:8888/Diego/bienestar/public/index.php/api/restrictions", method: .get, headers: ["token": saved_token]).responseJSON { response in // method defaults to `.get`
+                                
+                                let restriction_data = response.result.value as! [[String : Any]]
+                                
+                                cellsdatarestrictions = RestrictionData(todo: restriction_data)
+                                
+                                self.dismiss(animated: true)
+                                
+                                self.performSegue(withIdentifier: "LoginToMain", sender: Any?.self)
+                                
+                            }
+              
                 
                 
                 

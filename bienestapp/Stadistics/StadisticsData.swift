@@ -11,29 +11,53 @@ import Foundation
 class StadisticsData{
     
         var app_ids: [Int] = []
-        var start_hour: [Int] = []
-        var finish_hour: [Int] = []
-        var maximun_time: [Int] = []
+        var daily: [Int] = [];
+        var weekly: [Int] = [];
+        var monthly: [Int] = [];
         
         
         
-        init(todo: [[String:Any]]) {
+        init(todo: [[Any]]) {
             
+            var days: [Int] = []
             
             if todo.isEmpty {
                 
             } else {
                 
                 
-                for i in 0...(todo.count-1) {
+                for i in 0...(todo[0].count-1) {
                     
-                    self.app_ids.append(todo[i]["app_id"] as! Int)
-                    self.start_hour.append(todo[i]["start_hour"] as! Int)
-                    self.finish_hour.append(todo[i]["finish_hour"] as! Int)
-                    self.maximun_time.append(todo[i]["maximun_time"] as! Int)
+                    self.app_ids.append(todo[0][i] as! Int)
+                    days.append(todo[1][i] as! Int)
+                    
+                }
+                
+                
+                 for o in 0...(self.app_ids.count-1) {
+                    
+                    
+                        for i in 0...((cellsdatamain?.ids.count)!-1){
+                    
+                   
+                        
+                            if self.app_ids[o] == cellsdatamain?.ids[i] {
+                            
+                                let total: Int = Int((cellsdatamain?.total[o])!)!
+                                
+                                self.daily.append(Int(total)/days[i])
+                                
+                                self.weekly.append(Int(total)/7)
+                            
+                                self.monthly.append(Int(total)/30)
+                            
+                        }
+                        
+                    }
                     
                     
                 }
+                
                 
                 
             }

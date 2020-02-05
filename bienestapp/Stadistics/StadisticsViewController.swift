@@ -30,7 +30,8 @@ class StadisticsViewController: UIViewController, UITableViewDelegate, UITableVi
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return arr.count
+        return (cellsdatamain?.ids.count)!
+        
     }
     
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
@@ -40,9 +41,30 @@ class StadisticsViewController: UIViewController, UITableViewDelegate, UITableVi
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "StadisticsCell", for: indexPath) as! StadisticsTableViewCell
         
-        cell.app_image.image = #imageLiteral(resourceName: "icon_example")
-        cell.app_name.text = arr[indexPath.row]
-        cell.average_use.text = String(indexPath.row)
+        let url_converted: URL = URL(string: "https://fatimamartinez.es/wp-content/uploads/2018/09/Instagram-logo-de-600-600x600.jpg")!
+        
+        cell.app_image.load(url: url_converted)
+        cell.app_name.text = cellsdatamain?.names[indexPath.row]
+        
+        
+        if !(cellsdatastadistics?.app_ids.isEmpty)! {
+            
+            for i in 0...((cellsdatastadistics?.app_ids.count)!-1) {
+                
+                if cellsdatastadistics?.app_ids[i] == cellsdatamain?.ids[indexPath.row] {
+                    
+                    let stringed:String = String(cellsdatastadistics!.daily[i])
+                    
+                    cell.average_use.text = stringed
+                    
+                }
+            }
+            
+        } else {
+            cell.average_use.text = "0"
+        }
+        
+        
         
         return cell
     }

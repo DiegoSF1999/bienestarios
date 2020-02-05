@@ -10,6 +10,7 @@ import UIKit
 import Alamofire
 
 var cellsdatarestrictions: RestrictionData? = nil
+var cellsdatastadistics: StadisticsData? = nil
 
 class MenuViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
@@ -52,6 +53,8 @@ class MenuViewController: UIViewController, UITableViewDelegate, UITableViewData
                     
             
                     cellsdatarestrictions = RestrictionData(todo: restriction_data)
+                
+   
                     
                     self.performSegue(withIdentifier: self.identifiers[indexPath.row], sender: self)
                     
@@ -61,10 +64,27 @@ class MenuViewController: UIViewController, UITableViewDelegate, UITableViewData
             
             
             
-            break
+        break
+        case 2:
+            
+            Alamofire.request("http://127.0.0.1:8888/Diego/bienestar/public/index.php/api/stadistics", method: .get, headers: ["token": saved_token]).responseJSON { response in // method defaults to `.get`
+                
+                let stadistics_data = response.result.value as! [[Any]]
+                
+                if !stadistics_data.isEmpty {
+                
+                
+                cellsdatastadistics = StadisticsData(todo: stadistics_data)
+                
+                
+                self.performSegue(withIdentifier: self.identifiers[indexPath.row], sender: self)
+                
+                }
+                
+            }
             
         default:
-            
+    
             performSegue(withIdentifier: identifiers[indexPath.row], sender: self)
             break
             
@@ -72,7 +92,7 @@ class MenuViewController: UIViewController, UITableViewDelegate, UITableViewData
    
         
     
-    }
+    
     
 
     /*
@@ -85,4 +105,5 @@ class MenuViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     */
 
+}
 }
