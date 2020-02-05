@@ -47,9 +47,9 @@ class StadisticsData{
                                 
                                 self.daily.append(Int(total)/days[i])
                                 
-                                self.weekly.append(Int(total)/7)
+                                self.weekly.append((Int(total)/days[i])*7)
                             
-                                self.monthly.append(Int(total)/30)
+                                self.monthly.append((Int(total)/days[i])*30)
                             
                         }
                         

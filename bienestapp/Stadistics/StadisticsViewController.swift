@@ -8,6 +8,9 @@
 
 import UIKit
 
+var tableview:UITableView? = nil
+var picker_row:Int = 0
+
 class StadisticsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UIPickerViewDataSource, UIPickerViewDelegate, UITextFieldDelegate {
   
     
@@ -15,15 +18,16 @@ class StadisticsViewController: UIViewController, UITableViewDelegate, UITableVi
     @IBOutlet weak var app_image: UIImageView!
     @IBOutlet weak var percentage_use: UILabel!
     
+    @IBOutlet weak var table_view: UITableView!
     @IBOutlet weak var picker: UIPickerView!
     @IBOutlet weak var app_name: UILabel!
-    let arr:[String] = ["uno", "dos", "tres", "cuatro"]
     
      let pickerdata:[String] = ["daily", "weekly", "monthly"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        tableview = table_view
         
 
     }
@@ -53,10 +57,33 @@ class StadisticsViewController: UIViewController, UITableViewDelegate, UITableVi
                 
                 if cellsdatastadistics?.app_ids[i] == cellsdatamain?.ids[indexPath.row] {
                     
-                    let stringed:String = String(cellsdatastadistics!.daily[i])
+                    switch picker_row {
+                        
+                    case 0:
+                        let stringed:String = String(cellsdatastadistics!.daily[i])
+                        
+                        cell.average_use.text = stringed
+                        
+                        break
+                    case 1:
+                         let stringed:String = String(cellsdatastadistics!.weekly[i])
+                        
+                        cell.average_use.text = stringed
+                        
+                        break
+                    case 2:
+                        
+                        let stringed:String = String(cellsdatastadistics!.monthly[i])
+                        
+                        cell.average_use.text = stringed
+                        
+                            break
+                    default:
+                        break
                     
-                    cell.average_use.text = stringed
+                  
                     
+                    }
                 }
             }
             
@@ -82,8 +109,19 @@ class StadisticsViewController: UIViewController, UITableViewDelegate, UITableVi
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        print(pickerdata[row])
+       
+    
+        picker_row = row
+        
+        tableview?.reloadData()
+        
+            
+        
+        
+        
     }
+    
+    
 
     /*
     // MARK: - Navigation
