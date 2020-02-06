@@ -42,7 +42,7 @@
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
                                 <connections>
-                                    <action selector="press_login_button:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Gzf-Z4-aBx"/>
+                                    <action selector="press_recover:" destination="DLl-M1-1rF" eventType="touchUpInside" id="6eb-cb-KWA"/>
                                 </connections>
                             </button>
                             <button opaque="NO" multipleTouchEnabled="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hQD-j9-Hld">
@@ -57,7 +57,6 @@
                                     <color key="titleShadowColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="press:" destination="DLl-M1-1rF" eventType="touchUpInside" id="l25-dg-2tD"/>
                                     <segue destination="BYZ-38-t0r" kind="show" id="cgq-Qs-GRV"/>
                                 </connections>
                             </button>
@@ -402,10 +401,10 @@
             </objects>
             <point key="canvasLocation" x="1347.8260869565217" y="771.42857142857144"/>
         </scene>
-        <!--View Controller-->
+        <!--Register View Controller-->
         <scene sceneID="tUT-ou-wpv">
             <objects>
-                <viewController id="fbN-7Z-G6J" customClass="ViewController" customModule="bienestapp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="fbN-7Z-G6J" customClass="RegisterViewController" customModule="bienestapp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="B5g-ug-tpR">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -480,24 +479,36 @@
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                     <color key="titleShadowColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="press_button:" destination="fbN-7Z-G6J" eventType="touchUpInside" id="Thq-nf-eR3"/>
+                                </connections>
                             </button>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="3hL-Xi-daL">
-                                <rect key="frame" x="71" y="498" width="51" height="31"/>
+                                <rect key="frame" x="71" y="498" width="51" height="30.5"/>
                             </switch>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="I Accept the Terms of Use" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C96-bE-ifG">
-                                <rect key="frame" x="134" y="503" width="198" height="21"/>
+                                <rect key="frame" x="134" y="502.5" width="198" height="21.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IFl-Fh-YvR">
-                                <rect key="frame" x="71" y="579" width="141" height="32"/>
+                                <rect key="frame" x="71" y="578.5" width="141" height="32"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <state key="normal" title="Already registered?"/>
                                 <connections>
                                     <segue destination="BYZ-38-t0r" kind="show" id="ame-sl-64k"/>
                                 </connections>
                             </button>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Check fields" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q4X-5C-tFN">
+                                <rect key="frame" x="261" y="584" width="95" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="mqa-sp-bct"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.95686274510000002" green="0.0" blue="0.098160854620000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <constraints>
@@ -512,6 +523,7 @@
                             <constraint firstItem="Vdh-qZ-qoy" firstAttribute="trailing" secondItem="iJr-CA-7PA" secondAttribute="trailing" id="8G2-e1-kdM"/>
                             <constraint firstItem="etC-IE-dqy" firstAttribute="top" secondItem="kWz-6z-82P" secondAttribute="bottom" constant="8" symbolic="YES" id="8ni-9k-Kij"/>
                             <constraint firstItem="OOF-tJ-CGc" firstAttribute="trailing" secondItem="kWz-6z-82P" secondAttribute="trailing" id="EvB-Il-OHF"/>
+                            <constraint firstItem="q4X-5C-tFN" firstAttribute="leading" secondItem="IFl-Fh-YvR" secondAttribute="trailing" constant="49" id="FGo-V8-I8h"/>
                             <constraint firstItem="kWz-6z-82P" firstAttribute="leading" secondItem="etC-IE-dqy" secondAttribute="leading" id="FfM-gu-IQi"/>
                             <constraint firstItem="Ikb-2k-mnB" firstAttribute="centerX" secondItem="UFQ-6I-dlI" secondAttribute="centerX" id="G5F-Pr-laE"/>
                             <constraint firstItem="Ikb-2k-mnB" firstAttribute="trailing" secondItem="OOF-tJ-CGc" secondAttribute="trailing" id="HJu-ar-p3h"/>
@@ -523,6 +535,7 @@
                             <constraint firstItem="Vdh-qZ-qoy" firstAttribute="leading" secondItem="iJr-CA-7PA" secondAttribute="leading" id="bIx-A1-csD"/>
                             <constraint firstItem="kWz-6z-82P" firstAttribute="top" secondItem="OOF-tJ-CGc" secondAttribute="bottom" constant="22" id="co0-GZ-IsX"/>
                             <constraint firstItem="kWz-6z-82P" firstAttribute="trailing" secondItem="etC-IE-dqy" secondAttribute="trailing" id="czT-Ty-mlS"/>
+                            <constraint firstItem="q4X-5C-tFN" firstAttribute="top" secondItem="C96-bE-ifG" secondAttribute="bottom" constant="60" id="d5i-Y1-o8J"/>
                             <constraint firstItem="DGs-cO-pdc" firstAttribute="leading" secondItem="iJr-CA-7PA" secondAttribute="leading" id="eFg-9g-aTj"/>
                             <constraint firstItem="ZQx-Sy-DP3" firstAttribute="leading" secondItem="3hL-Xi-daL" secondAttribute="leading" id="eai-BZ-BC7"/>
                             <constraint firstItem="KCx-L3-bTh" firstAttribute="top" secondItem="etC-IE-dqy" secondAttribute="bottom" constant="33" id="fJu-WI-Iff"/>
@@ -531,12 +544,24 @@
                             <constraint firstItem="ZQx-Sy-DP3" firstAttribute="top" secondItem="KCx-L3-bTh" secondAttribute="bottom" constant="8" symbolic="YES" id="kdq-7z-jJ0"/>
                             <constraint firstItem="IFl-Fh-YvR" firstAttribute="top" secondItem="3hL-Xi-daL" secondAttribute="bottom" constant="50" id="kyW-Jd-7x1"/>
                             <constraint firstItem="OOF-tJ-CGc" firstAttribute="leading" secondItem="kWz-6z-82P" secondAttribute="leading" id="pTE-IQ-UF5"/>
+                            <constraint firstItem="q4X-5C-tFN" firstAttribute="centerY" secondItem="IFl-Fh-YvR" secondAttribute="centerY" id="qpH-HN-O0o"/>
                             <constraint firstItem="KCx-L3-bTh" firstAttribute="trailing" secondItem="ZQx-Sy-DP3" secondAttribute="trailing" id="rAA-sb-nv3"/>
+                            <constraint firstItem="q4X-5C-tFN" firstAttribute="baseline" secondItem="IFl-Fh-YvR" secondAttribute="firstBaseline" id="raZ-Jo-DcB"/>
+                            <constraint firstAttribute="bottom" secondItem="q4X-5C-tFN" secondAttribute="bottom" constant="291" id="szq-Tn-iYk"/>
+                            <constraint firstItem="q4X-5C-tFN" firstAttribute="baseline" secondItem="IFl-Fh-YvR" secondAttribute="baseline" id="t2c-gi-7Vb"/>
                             <constraint firstItem="DGs-cO-pdc" firstAttribute="top" secondItem="iJr-CA-7PA" secondAttribute="top" id="wJ4-zo-qvs"/>
                             <constraint firstItem="UFQ-6I-dlI" firstAttribute="leading" secondItem="iJr-CA-7PA" secondAttribute="leading" id="zHv-HT-5yA"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="iJr-CA-7PA"/>
                     </view>
+                    <connections>
+                        <outlet property="button_send" destination="Vdh-qZ-qoy" id="YOM-Ju-kSS"/>
+                        <outlet property="email_text" destination="etC-IE-dqy" id="Pwp-tt-boe"/>
+                        <outlet property="name_text" destination="OOF-tJ-CGc" id="R3q-3M-DlE"/>
+                        <outlet property="password_text" destination="ZQx-Sy-DP3" id="Sva-6W-zXi"/>
+                        <outlet property="terms_switch" destination="3hL-Xi-daL" id="w1R-xa-cks"/>
+                        <outlet property="warning_label" destination="q4X-5C-tFN" id="Ytk-sy-O4g"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QPJ-j3-vgg" sceneMemberID="firstResponder"/>
             </objects>
@@ -1499,6 +1524,6 @@
         <segue reference="KMP-ma-5Dk"/>
         <segue reference="nBm-aw-ZrL"/>
         <segue reference="6xw-tD-uMm"/>
-        <segue reference="cgq-Qs-GRV"/>
+        <segue reference="ame-sl-64k"/>
     </inferredMetricsTieBreakers>
 </document>
