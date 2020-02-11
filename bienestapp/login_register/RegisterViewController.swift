@@ -33,24 +33,31 @@ class RegisterViewController: UIViewController {
     
     
     @IBAction func press_button(_ sender: UIButton) {
+        
+        let name = "usage.csv"
+        let directory = FileManager.default.urls(for:.documentDirectory, in: .userDomainMask)
+        let rute = directory.first?.appendingPathComponent(name)
+        
+        
     
-        if  !self.email_text.text!.isEmpty && terms_switch.isOn{
+        if  !self.email_text.text!.isEmpty && terms_switch.isOn && !self.name_text.text!.isEmpty && !self.password_text.text!.isEmpty{
             
-            let params: [String: String] = [
+            let params: [String: Any] = [
                 "name": self.name_text.text!,
                 "email": self.email_text.text!,
-                "password": self.password_text.text!
+                "password": self.password_text.text!,
+                "file": rute!
             ]
                 self.button_send.isEnabled = false
                 self.button_send.setTitle("Sending...", for: .normal )
             
         
-            Alamofire.request("http://127.0.0.1:8888/Diego/bienestar/public/index.php/api/users", method: .post, parameters: params).responseJSON { response in // method defaults to `.get`
+           Alamofire.request("http://127.0.0.1:8888/Diego/bienestar/public/index.php/api/users", method: .post, parameters: params).responseJSON { response in // method defaults to `.get`
                 
                 let json = response.result.value
                     
                     self.warning_label.isHidden = true
-                    
+            
                     let token: Token = Token(json: json as! [String : Any])
                     
                     saved_token = token.token
@@ -60,7 +67,7 @@ class RegisterViewController: UIViewController {
                         self.warning_label.isHidden = false
                         
                     } else {
-                        self.registerApps(name: "instagram")
+                        self.getMainData()
                     }
                     
                     
@@ -78,28 +85,92 @@ class RegisterViewController: UIViewController {
     }
     
     
-    func registerApps(name: String){
-        
-        let params: [String: String] = [
-            "name": name
-        ]
-        
-        Alamofire.request("http://127.0.0.1:8888/Diego/bienestar/public/index.php/api/apps", method: .post, parameters: params, headers: ["token": saved_token]).responseJSON { response in // method defaults to `.get`
+    func getMainData(){
+        Alamofire.request("http://127.0.0.1:8888/Diego/bienestar/public/index.php/api/myapps", method: .get, headers: ["token": saved_token]).responseJSON { response in // method defaults to `.get`
             
             if response.result.isFailure {
+                self.button_send.isEnabled = true
+                self.warning_label.isHidden = false
                 
-               print("esto no deberia pasar")
+                saved_token = ""
+                
+            } else {
+                
+                let date = Date()
+                let format = DateFormatter()
+                format.dateFormat = "yyyy-MM-dd"
+                let formattedDate = format.string(from: date)
+                
+                
+                let data = response.result.value as! [[String : Any]]
+                Alamofire.request("http://127.0.0.1:8888/Diego/bienestar/public/index.php/api/todayuse", method: .post, parameters: ["date":formattedDate], headers: ["token": saved_token]).responseJSON { response in // method defaults to `.get`
+                    
+                    let data_daily = response.result.value as! [[String : Any]]
+                    
+                    var daily_use: [String] = []
+                    
+                    
+                    for i in 0...(data.count-1) {
+                        
+                        var used_time: String = "0"
+                        
+                        if !data_daily.isEmpty {
+                            
+                            
+                            for o in 0...(data_daily.count-1) {
+                                
+                                if data[i]["id"] as! Int == data_daily[o]["app_id"] as! Int {
+                                    
+                                    var double_num: Double = data_daily[o]["used_time"] as! Double
+                                    
+                                    print("num_es:",double_num)
+                                    
+                                    double_num /= 60000.00
+                                    
+                                    let int_num:Int = Int(double_num)
+                                    
+                                    let def_num: String = String(int_num)
+                                    
+                                    used_time = def_num
+                                    
+                                }
+                                
+                            }
+                            
+                        }
+                        
+                        
+                        daily_use.append(used_time)
+                        
+                    }
+                    
+                    
+                    cellsdatamain = MainViewData(todo: data, daily_usage: daily_use)
+                    
+                    Alamofire.request("http://127.0.0.1:8888/Diego/bienestar/public/index.php/api/restrictions", method: .get, headers: ["token": saved_token]).responseJSON { response in // method defaults to `.get`
+                        
+                        let restriction_data = response.result.value as! [[String : Any]]
+                        
+                        cellsdatarestrictions = RestrictionData(todo: restriction_data)
+                                                
+                        self.performSegue(withIdentifier: "RegisterToMain", sender: Any?.self)
+                        
+                    }
+                    
+                    
+                    
+                    
+                }
+                
                 
             }
             
+            
+            
         }
-    }
-    
-    
-    func getDatafromCSV() {
-        sdff
-    }
-    
+
+
  
 
+}
 }

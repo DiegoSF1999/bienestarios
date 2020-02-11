@@ -48,6 +48,7 @@ class RecoverViewController: UIViewController {
                 } else {
                     
                     self.text_error.isHidden = false
+                    self.button.isEnabled = true
                     self.button.setTitle("SEND NEW PASS", for: .normal)
                     
                 }

@@ -561,6 +561,7 @@
                         <outlet property="password_text" destination="ZQx-Sy-DP3" id="Sva-6W-zXi"/>
                         <outlet property="terms_switch" destination="3hL-Xi-daL" id="w1R-xa-cks"/>
                         <outlet property="warning_label" destination="q4X-5C-tFN" id="Ytk-sy-O4g"/>
+                        <segue destination="feJ-Dv-QDW" kind="show" identifier="RegisterToMain" id="dxa-Vo-JkT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QPJ-j3-vgg" sceneMemberID="firstResponder"/>
@@ -576,7 +577,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="CiH-8u-YGR">
-                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <color key="sectionIndexBackgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <prototypes>
@@ -1521,9 +1522,9 @@
     <inferredMetricsTieBreakers>
         <segue reference="560-N8-wjM"/>
         <segue reference="iFU-3P-obY"/>
-        <segue reference="KMP-ma-5Dk"/>
-        <segue reference="nBm-aw-ZrL"/>
-        <segue reference="6xw-tD-uMm"/>
+        <segue reference="dxa-Vo-JkT"/>
+        <segue reference="6ms-4b-FV0"/>
+        <segue reference="qMM-Ci-Y6N"/>
         <segue reference="ame-sl-64k"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -47,10 +47,29 @@ class StadisticsData{
                                 
                                 self.daily.append(Int(total)/days[i])
                                 
-                                self.weekly.append((Int(total)/days[i])*7)
-                            
-                                self.monthly.append((Int(total)/days[i])*30)
-                            
+                                let division_weekly = days[i]/7
+                                
+                                if (division_weekly > 0){
+                                    
+                                    self.weekly.append(Int(total)/division_weekly)
+                                    
+                                    
+                                } else {
+                                    self.weekly.append(0)
+                                }
+                                
+                                let division_monthly = days[i]/30
+                                
+                                if (division_monthly > 0){
+                                    
+                                    self.monthly.append(Int(total)/division_monthly)
+                                    
+                                    
+                                } else {
+                                    self.monthly.append(0)
+                                }
+                                
+                                                            
                         }
                         
                     }
