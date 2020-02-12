@@ -11,6 +11,8 @@ import Alamofire
 
 var cellsdatarestrictions: RestrictionData? = nil
 var cellsdatastadistics: StadisticsData? = nil
+var settings_data: ProfileData? = nil
+var notifications_sended = false
 
 class MenuViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
@@ -20,6 +22,8 @@ class MenuViewController: UIViewController, UITableViewDelegate, UITableViewData
     @IBOutlet weak var table_view: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.send_notifications()
         
         // Do any additional setup after loading the view.
     }
@@ -83,6 +87,24 @@ class MenuViewController: UIViewController, UITableViewDelegate, UITableViewData
                 
             }
             
+        break
+        case 3:
+            
+            Alamofire.request("http://127.0.0.1:8888/Diego/bienestar/public/index.php/api/getmyUser", method: .get, headers: ["token": saved_token]).responseJSON { response in // method defaults to `.get`
+                
+                let data = response.result.value as! [String:Any]
+                
+                    
+                    settings_data = ProfileData(todo: data)
+                    
+                    
+                    self.performSegue(withIdentifier: self.identifiers[indexPath.row], sender: self)
+                    
+                
+                
+            }
+            
+        break
         default:
     
             performSegue(withIdentifier: identifiers[indexPath.row], sender: self)
@@ -90,7 +112,7 @@ class MenuViewController: UIViewController, UITableViewDelegate, UITableViewData
             
         }
    
-        
+    
     
     
     
@@ -106,4 +128,14 @@ class MenuViewController: UIViewController, UITableViewDelegate, UITableViewData
     */
 
 }
+    
+    
+    func send_notifications() {
+        
+        
+        
+        
+    }
+    
+    
 }

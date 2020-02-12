@@ -26,7 +26,7 @@ class RestrictionDetailViewController: UIViewController {
         super.viewDidLoad()
         
         
-        let url_converted: URL = URL(string: "https://fatimamartinez.es/wp-content/uploads/2018/09/Instagram-logo-de-600-600x600.jpg")!
+        let url_converted: URL = URL(string: cellsdatamain!.icons[selectedcell])!
         
         app_image.load(url: url_converted)
         app_name.text = cellsdatamain?.names[selectedcell]
@@ -46,11 +46,11 @@ class RestrictionDetailViewController: UIViewController {
                 
                 didexist = true
                 
-                var max_time:Int = Int((cellsdatarestrictions?.maximun_time[i])!)
+                let max_time:Int = Int((cellsdatarestrictions?.maximun_time[i])!)
       
-                var start_hour: Int = Int((cellsdatarestrictions?.start_hour[i])!)
+                let start_hour: Int = Int((cellsdatarestrictions?.start_hour[i])!)
                 
-                var finish_hour: Int = Int((cellsdatarestrictions?.finish_hour[i])!)
+                let finish_hour: Int = Int((cellsdatarestrictions?.finish_hour[i])!)
                 
                 var date = Date(timeIntervalSince1970: TimeInterval(max_time))
                 

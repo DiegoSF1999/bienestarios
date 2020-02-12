@@ -19,7 +19,7 @@ class UsageView: UIViewController, UITableViewDelegate, UITableViewDataSource {
         super.viewDidLoad()
         
         // esto de momento
-         let url_converted: URL = URL(string: "https://fatimamartinez.es/wp-content/uploads/2018/09/Instagram-logo-de-600-600x600.jpg")!
+         let url_converted: URL = URL(string: first_var)!
         
         app_image.load(url: url_converted)
         app_name.text = second_var

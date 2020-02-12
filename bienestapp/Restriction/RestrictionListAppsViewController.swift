@@ -27,7 +27,7 @@ class RestrictionListAppsViewController: UIViewController,  UITableViewDelegate,
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "RestrictionCell", for: indexPath) as! RestrictionCellTableViewCell
         
-        let url_converted: URL = URL(string: "https://fatimamartinez.es/wp-content/uploads/2018/09/Instagram-logo-de-600-600x600.jpg")!
+        let url_converted: URL = URL(string: cellsdatamain!.icons[indexPath.row])!
         
         cell.app_image.load(url: url_converted)
         cell.app_name.text = cellsdatamain?.names[indexPath.row]

@@ -54,14 +54,7 @@ class RecoverViewController: UIViewController {
                 }
                 
                 
-               
-            
 
+            }
             
-            
-            
-
-            
-
-
-            }}}}
+        }}}

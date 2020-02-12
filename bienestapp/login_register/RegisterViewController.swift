@@ -21,8 +21,6 @@ class RegisterViewController: UIViewController {
     @IBOutlet weak var terms_switch: UISwitch!
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        saved_token = ""
      
     }
     

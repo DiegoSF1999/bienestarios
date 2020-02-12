@@ -21,29 +21,23 @@ class ViewController: UIViewController {
         
         if self.didload {
             
-          
-            
-            let parameters: [String: String] = [
-              //  "email": email_text.text!,
-              //  "password": password_text.text!
-                "email": "cevasdf1234@yopmail.com",
-                "password": "O0rwW9c8"
-            ]
-            
             // LoginToMain
             
             login_button.setTitle("Loading...", for: .normal )
             
             login_button.isEnabled = false
+                        
+            if email_text.text!.isEmpty || password_text.text!.isEmpty {
+                
+                wrong_crdentials_label.isHidden = false
+                
+            } else {
+                
+                wrong_crdentials_label.isHidden = true
+                self.login(email: email_text.text!, password: password_text.text!)
+                
+            }
             
-         
-            
-         //   let reqsinv = Requests()
-            
-            self.login(email: "cevasdf1234@yopmail.com", password: "O0rwW9c8")
-       
-            
-           // reqsinv.getTonterias()
         
         }
     }
@@ -122,7 +116,7 @@ class ViewController: UIViewController {
     func setSavedToken()
     {
 
-        // saved_token = self.hidden_text.text!
+        UserDefaults.standard.set(self.hidden_text.text!, forKey: "token")
         saved_token = self.hidden_text.text!
 
         

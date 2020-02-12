@@ -22,6 +22,8 @@
 		7F70508123D71A6700C6B556 /* Tonteria.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F70508023D71A6700C6B556 /* Tonteria.swift */; };
 		7F7D8B7F23EAF23D00EC39DE /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F7D8B7E23EAF23D00EC39DE /* RegisterViewController.swift */; };
 		7F7D8B8123EAF25300EC39DE /* RecoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F7D8B8023EAF25300EC39DE /* RecoverViewController.swift */; };
+		7F902D4023F40C8C00BC7E07 /* ProfileData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F902D3F23F40C8C00BC7E07 /* ProfileData.swift */; };
+		7F902D4223F411FD00BC7E07 /* NewPassViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F902D4123F411FD00BC7E07 /* NewPassViewController.swift */; };
 		7FA7F72F23CC87090013A022 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FA7F72E23CC87090013A022 /* AppDelegate.swift */; };
 		7FA7F73123CC87090013A022 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FA7F73023CC87090013A022 /* ViewController.swift */; };
 		7FA7F73623CC870C0013A022 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7FA7F73523CC870C0013A022 /* Assets.xcassets */; };
@@ -58,6 +60,8 @@
 		7F70508023D71A6700C6B556 /* Tonteria.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tonteria.swift; sourceTree = "<group>"; };
 		7F7D8B7E23EAF23D00EC39DE /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		7F7D8B8023EAF25300EC39DE /* RecoverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecoverViewController.swift; sourceTree = "<group>"; };
+		7F902D3F23F40C8C00BC7E07 /* ProfileData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileData.swift; sourceTree = "<group>"; };
+		7F902D4123F411FD00BC7E07 /* NewPassViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPassViewController.swift; sourceTree = "<group>"; };
 		7FA7F72B23CC87090013A022 /* bienestapp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = bienestapp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7FA7F72E23CC87090013A022 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7FA7F73023CC87090013A022 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -113,6 +117,8 @@
 			isa = PBXGroup;
 			children = (
 				7F65D17423D5A8E2008E1E97 /* ProfileViewController.swift */,
+				7F902D4123F411FD00BC7E07 /* NewPassViewController.swift */,
+				7F902D3F23F40C8C00BC7E07 /* ProfileData.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -344,10 +350,12 @@
 				7F39A40D23D097A600BF6AB7 /* StadisticsTableViewCell.swift in Sources */,
 				7FA7F73123CC87090013A022 /* ViewController.swift in Sources */,
 				7FF26C6B23E17DE600A2167D /* RestrictionData.swift in Sources */,
+				7F902D4023F40C8C00BC7E07 /* ProfileData.swift in Sources */,
 				7FB5C36023CF49E6004C24E1 /* MenuViewController.swift in Sources */,
 				7F39A40623D07D6700BF6AB7 /* RestrictionCellTableViewCell.swift in Sources */,
 				7FFE6F4E23E04FAB00FCEE4D /* UsageViewData.swift in Sources */,
 				7F65D17523D5A8E2008E1E97 /* ProfileViewController.swift in Sources */,
+				7F902D4223F411FD00BC7E07 /* NewPassViewController.swift in Sources */,
 				7F39A40B23D0973800BF6AB7 /* StadisticsViewController.swift in Sources */,
 				7FB5C36223CF4A3D004C24E1 /* MenuTableViewCell.swift in Sources */,
 				7F70507D23D70D8C00C6B556 /* Token.swift in Sources */,
