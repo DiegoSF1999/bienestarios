@@ -35,5 +35,23 @@ class ProfileViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
+    @IBAction func notification_change(_ sender: UISwitch) {
+        
+        if notifications_switch.isOn {
+            UserDefaults.standard.set(true, forKey: "notifications")
+        } else {
+            UserDefaults.standard.set(false, forKey: "notifications")
+        }
+        
+    }
+    @IBAction func messages_change(_ sender: UISwitch) {
+        
+        if messages_switch.isOn {
+            UserDefaults.standard.set(true, forKey: "messages")
+        } else {
+            UserDefaults.standard.set(false, forKey: "messages")
+        }
+        
+    }
+    
 }

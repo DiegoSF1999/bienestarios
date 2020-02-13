@@ -23,7 +23,7 @@ class UsageView: UIViewController, UITableViewDelegate, UITableViewDataSource {
         
         app_image.load(url: url_converted)
         app_name.text = second_var
-        total_usage.text = third_var
+        total_usage.text = third_var + " mins"
 
         // Do any additional setup after loading the view.
     }

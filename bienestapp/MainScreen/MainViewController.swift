@@ -8,6 +8,7 @@
 
 import UIKit
 import Alamofire
+import UserNotifications
 
 var cellsdatamain: MainViewData? = nil
 var cellsdatausage: UsageViewData? = nil
@@ -26,6 +27,21 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         super.viewDidLoad()
       
             UserDefaults.standard.set(saved_token, forKey: "token")
+        
+        
+        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound]) {
+            (autorizado, error) in
+            if autorizado {
+                print("Permiso concedido")
+            } else {
+                print("Permiso denegado")
+            }
+        }
+        
+        
+        
+        checkRestrictions()
+     
         
         
 
@@ -92,7 +108,61 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         }
         
       
-
+    func checkRestrictions() {
+        
+        
+        if (cellsdatarestrictions?.app_ids.isEmpty)! {
+            
+            
+        } else {
+            
+            print("estoy")
+            
+              for i in 0...(cellsdatamain!.ids.count-1) {
+                
+                for o in 0...(cellsdatarestrictions?.app_ids.count)!-1 {
+                    
+                    
+                    if cellsdatamain?.ids[i] == cellsdatarestrictions?.app_ids[o] {
+                        
+                        let max_time = (cellsdatarestrictions?.maximun_time[o])!/60000
+                        
+                        if max_time < Int((cellsdatamain?.daily[i])!)! {
+                            
+                            SendNotify(name: (cellsdatamain?.names[i])!)
+                            
+                            
+                            
+                        }
+                        
+                    }
+                    
+                    
+                }
+            
+        }
+            
+        }
+        
+    }
+    
+    func SendNotify(name: String) {
+        
+        let contenido = UNMutableNotificationContent()
+        contenido.title = "Notificación!"
+        contenido.subtitle = "Número de horas superado"
+        contenido.body = "Se ha usado " + name + " más del tiempo permitido"
+        contenido.sound = UNNotificationSound.default
+        contenido.badge = 3
+        
+        let disparador = UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false)
+        
+        let peticion = UNNotificationRequest(identifier: "miNotificacion", content: contenido, trigger: disparador)
+        
+            UNUserNotificationCenter.current().add(peticion, withCompletionHandler: nil)
+        
+        
+    }
  
         
     }

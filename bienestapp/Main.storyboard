@@ -220,11 +220,10 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="umE-XR-Mvu" userLabel="password_text">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="umE-XR-Mvu" userLabel="password_text">
                                 <rect key="frame" x="71" y="443" width="272" height="30"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <attributedString key="attributedText"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8uQ-2u-Wk5">
@@ -474,11 +473,10 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZQx-Sy-DP3" userLabel="password_text">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZQx-Sy-DP3" userLabel="password_text">
                                 <rect key="frame" x="71" y="443" width="272" height="30"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <attributedString key="attributedText"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" multipleTouchEnabled="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vdh-qZ-qoy">
@@ -1383,6 +1381,9 @@
                                     <constraint firstAttribute="height" constant="31" id="Aef-1e-yoY"/>
                                     <constraint firstAttribute="width" constant="47" id="NOM-f9-trI"/>
                                 </constraints>
+                                <connections>
+                                    <action selector="notification_change:" destination="g83-9h-yB6" eventType="valueChanged" id="nyw-L9-oQO"/>
+                                </connections>
                             </switch>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="p30-4x-DZx">
                                 <rect key="frame" x="293" y="477" width="49" height="31"/>
@@ -1390,6 +1391,9 @@
                                     <constraint firstAttribute="height" constant="31" id="Epu-2Y-gmm"/>
                                     <constraint firstAttribute="width" constant="47" id="efe-vW-IBW"/>
                                 </constraints>
+                                <connections>
+                                    <action selector="messages_change:" destination="g83-9h-yB6" eventType="valueChanged" id="J1c-6y-9Yd"/>
+                                </connections>
                             </switch>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="email" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F4t-aj-fUd">
                                 <rect key="frame" x="276" y="252" width="62" height="33"/>
@@ -1472,25 +1476,27 @@
             </objects>
             <point key="canvasLocation" x="435" y="3488"/>
         </scene>
-        <!--View Controller-->
+        <!--Map View Controller-->
         <scene sceneID="nq3-IH-TNB">
             <objects>
-                <viewController id="aJg-rz-gSO" sceneMemberID="viewController">
+                <viewController id="aJg-rz-gSO" customClass="MapViewController" customModule="bienestapp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="BwJ-bP-uLD">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MAP" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hBL-8U-bYN">
-                                <rect key="frame" x="210" y="399" width="36" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="fOf-sZ-lBu">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <connections>
+                                    <outlet property="delegate" destination="aJg-rz-gSO" id="pBT-Hk-4ca"/>
+                                </connections>
+                            </mapView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="hBL-8U-bYN" firstAttribute="top" secondItem="APS-ou-mF8" secondAttribute="top" constant="311" id="2OJ-SW-ndb"/>
-                            <constraint firstItem="hBL-8U-bYN" firstAttribute="leading" secondItem="APS-ou-mF8" secondAttribute="leading" constant="210" id="qyk-vK-Hbz"/>
+                            <constraint firstItem="fOf-sZ-lBu" firstAttribute="leading" secondItem="APS-ou-mF8" secondAttribute="leading" id="A0l-I7-5r4"/>
+                            <constraint firstItem="APS-ou-mF8" firstAttribute="trailing" secondItem="fOf-sZ-lBu" secondAttribute="trailing" id="aa0-Xp-oBO"/>
+                            <constraint firstItem="fOf-sZ-lBu" firstAttribute="top" secondItem="APS-ou-mF8" secondAttribute="top" id="y0L-7M-VNx"/>
+                            <constraint firstItem="APS-ou-mF8" firstAttribute="bottom" secondItem="fOf-sZ-lBu" secondAttribute="bottom" id="ygk-O9-3qf"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="APS-ou-mF8"/>
                     </view>
@@ -1506,6 +1512,9 @@
                             </button>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="mapita" destination="fOf-sZ-lBu" id="ct0-S0-yLh"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ukg-WW-gKN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1536,9 +1545,9 @@
     <inferredMetricsTieBreakers>
         <segue reference="560-N8-wjM"/>
         <segue reference="iFU-3P-obY"/>
-        <segue reference="dxa-Vo-JkT"/>
-        <segue reference="6ms-4b-FV0"/>
-        <segue reference="19S-bq-fz7"/>
+        <segue reference="b5e-ER-MJt"/>
+        <segue reference="nBm-aw-ZrL"/>
+        <segue reference="PMZ-64-pWV"/>
         <segue reference="ame-sl-64k"/>
     </inferredMetricsTieBreakers>
 </document>

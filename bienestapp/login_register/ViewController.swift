@@ -94,22 +94,19 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let name = UserDefaults.standard.string(forKey: "token")
-        
-        didload = true
-        all.isHidden = false
+        let recover_token = UserDefaults.standard.string(forKey: "token")
         
         
-      /*  if name == nil
+        if recover_token == nil
         {
             didload = true
             all.isHidden = false
             
         } else {
             
-            self.hidden_text.text = name
+            self.hidden_text.text = recover_token
             self.continuelogin()  // aqui hay que decirle que se logue directamente
-        }*/
+        }
     
     }
     
@@ -145,6 +142,8 @@ class ViewController: UIViewController {
                         Alamofire.request("http://127.0.0.1:8888/Diego/bienestar/public/index.php/api/todayuse", method: .post, parameters: ["date":formattedDate], headers: ["token": saved_token]).responseJSON { response in // method defaults to `.get`
                             
                             let data_daily = response.result.value as! [[String : Any]]
+                            
+                            print("data dayly es:", data_daily)
                             
                             var daily_use: [String] = []
                             
@@ -190,9 +189,30 @@ class ViewController: UIViewController {
                                 
                                 cellsdatarestrictions = RestrictionData(todo: restriction_data)
                                 
-                                self.dismiss(animated: true)
                                 
-                                self.performSegue(withIdentifier: "LoginToMain", sender: Any?.self)
+                                Alamofire.request("http://127.0.0.1:8888/Diego/bienestar/public/index.php/api/restrictions", method: .get, headers: ["token": saved_token]).responseJSON { response in // method defaults to `.get`
+                                    
+                                    let restriction_data = response.result.value as! [[String : Any]]
+                                    
+                                    //if !restriction_data.isEmpty {
+                                    
+                                    
+                                    cellsdatarestrictions = RestrictionData(todo: restriction_data)
+                                    
+                                    
+                                    
+                                    self.dismiss(animated: true)
+                                    
+                                    self.performSegue(withIdentifier: "LoginToMain", sender: Any?.self)
+                                    
+                                    
+                                    //}
+                                    
+                                }
+                                
+                                
+                                
+                                
                                 
                             }
               
